@@ -106,33 +106,6 @@ export CPATH="$(xcrun --show-sdk-path)/usr/include"
 
 eval "$(thefuck --alias)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-alias publicip="curl https://ipinfo.io/ip"
-alias activate="source env/bin/activate"
-alias ls="colorls"
-alias weather="curl http://wttr.in/ann_arbor\?Tn1"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias smell="say --interactive=green -v Albert smell"
-alias kill_vm="VBoxManage controlvm 388-kali poweroff"
-alias vm_ssh="ssh -p 2222 conor@127.0.0.1"
-alias 485tree="tree --matchdirs -I 'env|__pycache__|node_modules|*.egg*'"
-alias notion="open /Applications/Notion.app"
-alias preview="quick-look"
-alias ql="quick-look"
-alias mv="mv -iv"
-alias cp="cp -iv"
-alias vimless="/usr/share/vim/vim80/macros/less.sh"
-alias tldr="tldr -t ocean"
-alias googler="googler -n 3"
-alias createfs="~/UofM/F19/EECS_482/p4/utility/createfs_macos"
-alias showfs="~/UofM/F19/EECS_482/p4/utility/showfs_macos"
-alias say="say --interactive=green"
-
 cecho()
 {
     text="$1";
