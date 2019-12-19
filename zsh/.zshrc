@@ -106,6 +106,12 @@ export CPATH="$(xcrun --show-sdk-path)/usr/include"
 
 eval "$(thefuck --alias)"
 
+# edit aliases
+aliases()
+{
+    vim $ZSH_CUSTOM/aliases.zsh
+}
+
 cecho()
 {
     text="$1";
