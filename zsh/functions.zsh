@@ -6,6 +6,12 @@ aliases()
     vim $ZSH_CUSTOM/aliases.zsh
 }
 
+# edit zsh functions (this file)
+func()
+{
+    vim $ZSH_CUSTOM/functions.zsh
+}
+
 # print colorful text
 cecho()
 {
