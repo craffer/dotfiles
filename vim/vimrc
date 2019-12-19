@@ -1,0 +1,55 @@
+" vim-plug config
+call plug#begin('~/.vim/plugged')
+
+" onedark theme
+Plug 'joshdick/onedark.vim'
+
+" polygot language pack
+Plug 'sheerun/vim-polyglot'
+
+" adds UI line
+Plug 'itchyny/lightline.vim'
+
+" adds git support
+Plug 'tpope/vim-fugitive'
+
+" file system explorer
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
+" other options
+set number
+filetype plugin indent on
+set shiftwidth=4
+set hidden
+set tabstop=4
+set softtabstop=4
+set expandtab
+set laststatus=2
+set guioptions=
+set t_Co=256
+
+"turns on truecolor
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+syntax on
+colorscheme onedark
+
+let g:lightline = { 
+    \ 'colorscheme': 'onedark',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \           [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitivehead'
+    \ },
+    \ }
