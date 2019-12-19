@@ -184,7 +184,6 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # tab completion for colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
-source ~/.purepower
 
 # PATH stuff
 export PATH="/usr/local/opt/ruby/bin:$PATH"
