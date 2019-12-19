@@ -1,0 +1,25 @@
+# .always_forget.txt
+# 
+# craffer's UNIX cheat sheet
+# 
+# Conor Rafferty <craffer@umich.edu>
+
+update updates the tool (brew), upgrade updates what it installs
+
+for compatibility with upgraded bash, use #!/usr/bin/env bash
+
+the command `jobs` shows the processes running in the background
+
+do replace spaces with underscores in a filename, do `rename "s/ /_/g" *`
+
+update from command line:
+softwareupdate -l
+softwareupdate -i -a --restart
+
+kill a process running in the background:
+ps # find process ID
+kill [ pid ]
+
+Custom Bash Scripts:
+dl_mover: move downloads in last arg1 minutes to arg2
+pdfgrep: search all pdfs in a directory for a phrase
