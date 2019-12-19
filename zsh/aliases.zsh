@@ -23,3 +23,4 @@ alias googler="googler -n 3"
 alias createfs="~/UofM/F19/EECS_482/p4/utility/createfs_macos"
 alias showfs="~/UofM/F19/EECS_482/p4/utility/showfs_macos"
 alias say="say --interactive=green"
+
