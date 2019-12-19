@@ -1,0 +1,38 @@
+[user]
+	name = Conor Rafferty
+	email = craffer@umich.edu
+	signingkey = 6ED9CECA
+[color]
+    ui = auto
+	status = always
+[color "branch"]
+    current = red bold
+    local = cyan
+    remote = magenta
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+	added = yellow
+    changed = green
+    untracked = cyan
+	branch = red bold
+[core]
+    editor = vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+    s = status
+    d = diff
+    ls = "!f() { git ls-tree -r HEAD --name-only; }; f"
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2
+[commit]
+	gpgsign = true
+[pager]
+	branch = false
