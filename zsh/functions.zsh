@@ -37,9 +37,8 @@ how_in()
 update_plugins() 
 {
     printf "\n${BLUE}%s${NORMAL}\n" "Updating custom plugins"
-    cd $ZSH_CUSTOM/plugins
 
-    for plugin in */; do
+    for plugin in $ZSH_CUSTOM/plugins/*; do
         if [ -d "$plugin/.git" ]; then
             printf "${YELLOW}%s${NORMAL}\n" "${plugin%/}"
             git -C "$plugin" pull
