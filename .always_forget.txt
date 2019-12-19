@@ -4,22 +4,41 @@
 # 
 # Conor Rafferty <craffer@umich.edu>
 
+
+# move around on command line
+CTRL + A        # move to beginning of line
+CTRL + E        # move to end of line
+CTRL + ←        # move back one word
+CTRL + →        # move forward one word
+CTRL + U        # clear line
+CTRL + L        # clear terminal
+CTRL + K        # delete to the end of line
+CTRL + W        # delete the next word
+CTRL + R        # search history
+CTRL + C        # kill running process
+CTRL + Z        # suspend running process
+!!              # execute most recent command
+
+
+# random notes
 update updates the tool (brew), upgrade updates what it installs
+for compatibility with upgraded bash in scripts, use #!/usr/bin/env bash
+`jobs` shows the processes running in the background
+to replace spaces with underscores in a filename, do `rename "s/ /_/g" *`
 
-for compatibility with upgraded bash, use #!/usr/bin/env bash
 
-the command `jobs` shows the processes running in the background
-
-do replace spaces with underscores in a filename, do `rename "s/ /_/g" *`
-
-update from command line:
+# macos stuff
 softwareupdate -l
 softwareupdate -i -a --restart
 
+
+# useful command line tools
 kill a process running in the background:
 ps # find process ID
 kill [ pid ]
 
-Custom Bash Scripts:
+
+# my custom bash scripts
 dl_mover: move downloads in last arg1 minutes to arg2
 pdfgrep: search all pdfs in a directory for a phrase
+
