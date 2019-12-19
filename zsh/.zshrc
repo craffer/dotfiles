@@ -5,53 +5,28 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/conorrafferty/.oh-my-zsh"
 
-# good theme: common
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable auto-setting terminal title.
+# Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
 # lazyload nvm
 # all props goes to http://broken-by.me/lazy-load-nvm/
 # grabbed from reddit @ https://www.reddit.com/r/node/comments/4tg5jg/lazy_load_nvm_for_faster_shell_start/
-
 declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
 
 NODE_GLOBALS+=("node")
@@ -66,6 +41,7 @@ for cmd in "${NODE_GLOBALS[@]}"; do
     eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
 done
 
+# set JAVA environment variable
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -82,21 +58,13 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+# Activate oh-my-zsh manager
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
-else
-   export EDITOR='vim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export EDITOR='vim'
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -104,14 +72,15 @@ fi
 # set CPATH for Xcode headers
 export CPATH="$(xcrun --show-sdk-path)/usr/include"
 
+# needed to make `fuck` command work
 eval "$(thefuck --alias)"
 
+# sets the terminal tab title to current dir
 precmd() {
-  # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
-# expand aliases into what they are on space
+# expand aliases into what they stand for on space
 expand-alias() {
     zle _expand_alias
     zle self-insert
@@ -130,20 +99,15 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-# enable pure theme, if uncommented make sure theme = "" and change font
-# autoload -U promptinit; promptinit
-# prompt pure
-# # disable title feature
-# prompt_pure_set_title() {}
-
 # tab completion for colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
 
-# PATH stuff
+# PATH stuff to make ruby gems work (colorls)
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 
+# set environment variable for EECS 482 project 4
 export FS_CRYPT=CLEAR
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# P10k customization. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
