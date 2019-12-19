@@ -1,8 +1,8 @@
 # Tap List
-homebrew/core
-homebrew/cask
-caskroom/versions
-heroku/brew
+tap 'homebrew/core'
+tap 'homebrew/cask'
+tap 'caskroom/versions'
+tap 'heroku/brew'
 
 # Core Homebrew
 brew 'adns'
