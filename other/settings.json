@@ -1,0 +1,177 @@
+{
+    "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.rulers": [100],
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "python.pythonPath": "/usr/local/bin/python3",
+    "code-runner.showExecutionMessage": false,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.clearPreviousOutput": true,
+    "workbench.startupEditor": "none",
+    "workbench.statusBar.feedback.visible": false,
+    "window.newWindowDimensions": "inherit",
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "git.showPushSuccessNotification": true,
+    "git.enableSmartCommit": true,
+    "editor.wordWrap": "on",
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "php": "php",
+        "python": "python3 -u",
+        "perl": "perl",
+        "perl6": "perl6",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "cmd /c",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "applescript": "osascript",
+        "clojure": "lein exec",
+        "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        "racket": "racket",
+        "ahk": "autohotkey",
+        "autoit": "autoit3",
+        "dart": "dart",
+        "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+        "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+        "haskell": "runhaskell",
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script"
+    },
+    "code-runner.customCommand": "echo \"custom command\"",
+    "debug.allowBreakpointsEverywhere": true,
+    "python.linting.pydocstyleEnabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "window.zoomLevel": 0,
+    "python.linting.pycodestyleEnabled": true,
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.populateGitCoAuthors": "always",
+    "git.autofetch": true,
+    "eslint.run": "onSave",
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.detectIndentation": false,
+    "[javascriptreact]": {
+        "editor.tabSize": 2,
+        "editor.rulers": [100]
+    },
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "explorer.confirmDelete": false,
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "FuraCode Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "python.linting.pycodestylePath": "pycodestyle",
+    "liveshare.featureSet": "insiders",
+    "telemetry.enableTelemetry": false,
+    "code-runner.enableAppInsights": false,
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "git.ignoreLegacyWarning": true,
+    "explorer.confirmDragAndDrop": false,
+    "markdownlint.run": "onSave",
+    "remote.SSH.showLoginTerminal": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100}",
+    "python.linting.pycodestyleArgs": [
+        "--max-line-length=120"
+    ],
+    "git.untrackedChanges": "separate",
+    "oneDarkPro.bold": true,
+    "diffEditor.ignoreTrimWhitespace": false
+}
