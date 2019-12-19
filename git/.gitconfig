@@ -1,6 +1,7 @@
 [user]
 	name = Conor Rafferty
 	email = craffer@umich.edu
+    # TODO: make this an environment variable
 	signingkey = 6ED9CECA
 [color]
     ui = auto
