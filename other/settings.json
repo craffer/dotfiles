@@ -173,5 +173,8 @@
     ],
     "git.untrackedChanges": "separate",
     "oneDarkPro.bold": true,
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.associations": {
+        "vimrc": "viml"
+    }
 }
