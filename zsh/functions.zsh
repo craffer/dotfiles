@@ -44,4 +44,13 @@ update_plugins()
             git -C "$plugin" pull
         fi
     done
+
+    printf "\n${BLUE}%s${NORMAL}\n" "Updating custom themes"
+
+    for theme in $ZSH_CUSTOM/themes/*; do
+        if [ -d "$theme/.git" ]; then
+            printf "${YELLOW}%s${NORMAL}\n" "${theme%/}"
+            git -C "$theme" pull
+        fi
+    done
 }
