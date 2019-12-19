@@ -106,46 +106,9 @@ export CPATH="$(xcrun --show-sdk-path)/usr/include"
 
 eval "$(thefuck --alias)"
 
-# edit aliases
-aliases()
-{
-    vim $ZSH_CUSTOM/aliases.zsh
-}
-
-cecho()
-{
-    text="$1";
-    echo $text | figlet | lolcat -t
-}
-
-untar()
-{
-    file="$1";
-    tar -xzvf $file
-}
-
-how_in()
-{
-  where="$1"; shift
-  IFS=+ curl "https://cht.sh/$where/ $*"
-}
-
 precmd() {
   # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
-}
-
-update_plugins() 
-{
-    printf "\n${BLUE}%s${NORMAL}\n" "Updating custom plugins"
-    cd $ZSH_CUSTOM/plugins
-
-    for plugin in */; do
-        if [ -d "$plugin/.git" ]; then
-            printf "${YELLOW}%s${NORMAL}\n" "${plugin%/}"
-            git -C "$plugin" pull
-        fi
-    done
 }
 
 # expand aliases into what they are on space
@@ -161,7 +124,6 @@ pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
   zle -N self-insert url-quote-magic
 }
-
 pastefinish() {
   zle -N self-insert $OLD_SELF_INSERT
 }
