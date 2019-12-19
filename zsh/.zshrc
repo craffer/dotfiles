@@ -135,6 +135,19 @@ precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
+update_plugins() 
+{
+    printf "\n${BLUE}%s${NORMAL}\n" "Updating custom plugins"
+    cd $ZSH_CUSTOM/plugins
+
+    for plugin in */; do
+        if [ -d "$plugin/.git" ]; then
+            printf "${YELLOW}%s${NORMAL}\n" "${plugin%/}"
+            git -C "$plugin" pull
+        fi
+    done
+}
+
 # expand aliases into what they are on space
 expand-alias() {
     zle _expand_alias
