@@ -1,0 +1,15 @@
+[submodule "vim/plugged/lightline.vim"]
+	path = vim/plugged/lightline.vim
+	url = git@github.com:itchyny/lightline.vim.git
+[submodule "vim/plugged/nerdtree"]
+	path = vim/plugged/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/plugged/onedark.vim"]
+	path = vim/plugged/onedark.vim
+	url = git@github.com:joshdick/onedark.vim.git
+[submodule "vim/plugged/vim-fugitive.git"]
+	path = vim/plugged/vim-fugitive.git
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "vim/plugged/vim-polyglot"]
+	path = vim/plugged/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
