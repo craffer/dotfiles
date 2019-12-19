@@ -24,7 +24,7 @@ core-macos: brew git npm ruby
 packages: brew-packages cask-apps node-packages gems
 
 link:
-	# TODO, automatically set up symlinks
+	install/link.zsh
 
 # install homebrew, if not already installed
 brew:
