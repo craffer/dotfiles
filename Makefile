@@ -25,7 +25,7 @@ oh-my-zsh:
 
 core-macos: brew git npm ruby defaults
 
-packages: brew-packages cask-apps node-packages gems
+packages: brew-packages cask-apps node-packages gems pip
 
 link:
 	install/link.zsh
