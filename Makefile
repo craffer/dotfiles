@@ -23,7 +23,7 @@ sudo:
 oh-my-zsh:
 	[ -d ~/.oh-my-zsh/ ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-core-macos: brew git npm ruby
+core-macos: brew git npm ruby defaults
 
 packages: brew-packages cask-apps node-packages gems
 
@@ -63,3 +63,6 @@ node-packages: npm
 # install ruby gems from our Gemfile
 gems: ruby
 	export PATH="/usr/local/opt/ruby/bin:$PATH"; gem install $(shell cat install/Gemfile)
+
+defaults: sudo
+	other/.macos.zsh
