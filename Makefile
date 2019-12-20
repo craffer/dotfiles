@@ -12,12 +12,16 @@ endif
 # install everything, based on what OS you're running
 all: $(OS)
 
-macos: sudo core-macos packages link
+macos: sudo oh-my-zsh core-macos packages link
 
 # get sudo access
 sudo:
 	sudo -v
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# install oh-my-zsh if its not installed, and use our zshrc (not the default one)
+oh-my-zsh:
+	[ -d ~/.oh-my-zsh/ ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 core-macos: brew git npm ruby
 

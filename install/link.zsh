@@ -16,7 +16,7 @@ ln -sv ~/.dotfiles/vim/vimrc ~/.vimrc
 
 # zsh
 ln -sv ~/.dotfiles/zsh/.p10k.zsh ~
-ln -sv ~/.dotfiles/zsh/.zshrc ~
+ln -svFh ~/.dotfiles/zsh/.zshrc ~
 ln -sv ~/.dotfiles/zsh/aliases.zsh ~/.oh-my-zsh/custom
 ln -sv ~/.dotfiles/zsh/functions.zsh ~/.oh-my-zsh/custom
 ln -sv ~/.dotfiles/zsh/shortcuts.zsh ~/.oh-my-zsh/custom
