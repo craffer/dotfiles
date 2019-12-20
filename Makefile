@@ -64,5 +64,9 @@ node-packages: npm
 gems: ruby
 	export PATH="/usr/local/opt/ruby/bin:$PATH"; gem install $(shell cat install/Gemfile)
 
+# install pip3 packages from our pipfile
+pip: brew
+	pip3 install -r install/pipfile
+
 defaults: sudo
 	other/.macos.zsh
