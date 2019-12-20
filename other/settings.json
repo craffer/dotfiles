@@ -176,5 +176,6 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "files.associations": {
         "vimrc": "viml"
-    }
+    },
+    "git.confirmSync": false
 }
