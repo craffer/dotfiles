@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Hasklig, Menlo, Monaco, 'Courier New', monospace",
     "editor.rulers": [100],
     "[javascript]": {
         "editor.tabSize": 2
@@ -153,7 +153,7 @@
     "latex-workshop.latex.autoBuild.run": "onFileChange",
     "explorer.confirmDelete": false,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "FuraCode Nerd Font Mono",
+    "terminal.integrated.fontFamily": "Hasklug Nerd Font",
     "editor.fontLigatures": true,
     "python.linting.pycodestylePath": "pycodestyle",
     "liveshare.featureSet": "insiders",
