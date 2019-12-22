@@ -177,6 +177,9 @@
     "files.associations": {
         "vimrc": "viml"
     },
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    }
 }
 
