@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
     "editor.rulers": [100],
     "[javascript]": {
         "editor.tabSize": 2
