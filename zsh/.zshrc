@@ -106,9 +106,6 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 
-# set environment variable for EECS 482 project 4
-export FS_CRYPT=CLEAR
-
 # P10k customization. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
