@@ -3,6 +3,7 @@
 	email = craffer@umich.edu
     # TODO: make this an environment variable
 	signingkey = 6ED9CECA
+
 [color]
     ui = auto
 	status = always
@@ -20,13 +21,16 @@
     changed = green
     untracked = cyan
 	branch = red bold
+
 [core]
     editor = vim
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [alias]
     a = add
     b = branch
@@ -42,9 +46,12 @@
     master = !git switch master && git pull --prune  # prune remote branches
     ls = "!f() { git ls-tree -r HEAD --name-only; }; f"  # list all tracked files
     amend = commit --amend  # amend most recent commit
+
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg2
+
 [commit]
 	gpgsign = true
+
 [pager]
 	branch = false
