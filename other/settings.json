@@ -180,6 +180,7 @@
     "git.confirmSync": false,
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
-    }
+    },
+    "C_Cpp.intelliSenseCacheSize": 512
 }
 
