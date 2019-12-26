@@ -10,7 +10,6 @@ alias ....="cd ../../.."
 alias mv="mv -iv"
 alias cp="cp -iv"
 alias v="vim"
-alias +x="chmod +x"
 alias x+="chmod +x"
 
 # macos
