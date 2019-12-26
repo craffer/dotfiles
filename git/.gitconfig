@@ -41,6 +41,7 @@
 
     ap = add -p  # patch mode
     ca = commit -a  # add all files and commit
+    cm = commit -m  # commit with message
     cam = commit -am  # add all files and commit with message
 
     master = !git switch master && git pull --prune  # prune remote branches
