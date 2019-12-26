@@ -23,5 +23,6 @@ ln -sv ~/.dotfiles/zsh/shortcuts.zsh ~/.oh-my-zsh/custom
 
 # other
 ln -sv ~/.dotfiles/other/.eslintrc.js ~
-ln -sv ~/.dotfiles/other/settings.json ~/Library/Application\ Support/Code/User
 ln -sv ~/.dotfiles/other/.always_forget.txt ~
+ln -sv ~/.dotfiles/other/settings.json ~/Library/Application\ Support/Code/User
+ln -s ~/.dotfiles/other/itermprofiles.json ~/Library/Application\ Support/iTerm2/DynamicProfiles
