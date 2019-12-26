@@ -28,9 +28,20 @@
 	process = git-lfs filter-process
 	required = true
 [alias]
-    s = status
+    a = add
+    b = branch
+    c = commit
     d = diff
-    ls = "!f() { git ls-tree -r HEAD --name-only; }; f"
+    l = log --graph --decorate --stat --oneline  # shorter log, but with relevant info
+    s = status -sb  # shorter status, but with branch name
+
+    ap = add -p  # patch mode
+    ca = commit -a  # add all files and commit
+    cam = commit -am  # add all files and commit with message
+
+    master = !git switch master && git pull --prune  # prune remote branches
+    ls = "!f() { git ls-tree -r HEAD --name-only; }; f"  # list all tracked files
+    amend = commit --amend  # amend most recent commit
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg2
 [commit]
