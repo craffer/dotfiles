@@ -40,6 +40,7 @@
     s = status -sb  # shorter status, but with branch name
 
     ap = add -p  # patch mode
+    aa = add -A
     ca = commit -a  # add all files and commit
     cm = commit -m  # commit with message
     cam = commit -am  # add all files and commit with message
