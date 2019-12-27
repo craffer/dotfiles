@@ -21,6 +21,7 @@ woff2:            font
 gitconfig:        git
 gitignore:        git
 gitignore_global: git
+gitkeep:          git
 gitmodules:       git
 lhs:              hs
 bmp:              image
@@ -77,6 +78,7 @@ mov:              video
 mp4:              video
 ogv:              video
 webm:             video
+vimrc:            vim
 bat:              windows
 exe:              windows
 ini:              windows
