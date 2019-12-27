@@ -1,28 +1,28 @@
 # link the files in here to the root directory
 
 # bash
-ln -sv ~/.dotfiles/bash/.bash_profile ~
-ln -sv ~/.dotfiles/bash/.bashrc ~
+ln -svFh ~/.dotfiles/bash/.bash_profile ~
+ln -svFh ~/.dotfiles/bash/.bashrc ~
 
 # config
-ln -svFh ~/.dotfiles/config ~/.config
+ln -svFhFh ~/.dotfiles/config ~/.config
 
 # git
-ln -sv ~/.dotfiles/git/.gitconfig ~
+ln -svFh ~/.dotfiles/git/.gitconfig ~
 
 # vim
-ln -svFh ~/.dotfiles/vim ~/.vim
-ln -sv ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -svFhFh ~/.dotfiles/vim ~/.vim
+ln -svFh ~/.dotfiles/vim/vimrc ~/.vimrc
 
 # zsh
-ln -sv ~/.dotfiles/zsh/.p10k.zsh ~
-ln -svFh ~/.dotfiles/zsh/.zshrc ~
-ln -sv ~/.dotfiles/zsh/aliases.zsh ~/.oh-my-zsh/custom
-ln -sv ~/.dotfiles/zsh/functions.zsh ~/.oh-my-zsh/custom
-ln -sv ~/.dotfiles/zsh/shortcuts.zsh ~/.oh-my-zsh/custom
+ln -svFhFh ~/.dotfiles/zsh/.p10k.zsh ~
+ln -svFhFh ~/.dotfiles/zsh/.zshrc ~
+ln -svFh ~/.dotfiles/zsh/aliases.zsh ~/.oh-my-zsh/custom
+ln -svFh ~/.dotfiles/zsh/functions.zsh ~/.oh-my-zsh/custom
+ln -svFh ~/.dotfiles/zsh/shortcuts.zsh ~/.oh-my-zsh/custom
 
 # other
-ln -sv ~/.dotfiles/other/.eslintrc.js ~
-ln -sv ~/.dotfiles/other/.always_forget.txt ~
-ln -sv ~/.dotfiles/other/settings.json ~/Library/Application\ Support/Code/User
-ln -s ~/.dotfiles/other/itermprofiles.json ~/Library/Application\ Support/iTerm2/DynamicProfiles
+ln -svFh ~/.dotfiles/other/.eslintrc.js ~
+ln -svFh ~/.dotfiles/other/.always_forget.txt ~
+ln -svFh ~/.dotfiles/other/settings.json ~/Library/Application\ Support/Code/User
+ln -svFh ~/.dotfiles/other/itermprofiles.json ~/Library/Application\ Support/iTerm2/DynamicProfiles

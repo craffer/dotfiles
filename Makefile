@@ -28,7 +28,7 @@ core-macos: brew git npm ruby defaults
 packages: brew-packages cask-apps node-packages gems pip
 
 link:
-	install/link.zsh
+	install/link.sh
 
 # install homebrew, if not already installed
 brew:
