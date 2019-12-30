@@ -25,6 +25,16 @@ alias 485tree="tree --matchdirs -I 'env|__pycache__|node_modules|*.egg*'"
 alias createfs="~/UofM/F19/EECS_482/p4/utility/createfs_macos"
 alias showfs="~/UofM/F19/EECS_482/p4/utility/showfs_macos"
 
+# directory shortcuts
+alias projects="cd ~/Other/coding/projects"
+alias dotfiles="cd ~/.dotfiles"
+alias uofm="cd ~/UofM"
+alias ufom="cd ~/UofM"
+alias f18="cd ~/UofM/F18"
+alias w19="cd ~/UofM/W19"
+alias f19="cd ~/UofM/F19"
+alias w20="cd ~/UofM/W20"
+
 # other
 alias weather="curl http://wttr.in/ann_arbor\?Tn1"
 alias smell="say --interactive=green -v Albert smell"
