@@ -73,7 +73,7 @@ export EDITOR='vim'
 export CPATH="$(xcrun --show-sdk-path)/usr/include"
 
 # needed to make `fuck` command work
-eval "$(thefuck --alias)"
+eval $(thefuck --alias)
 
 # sets the terminal tab title to current dir
 precmd() {
