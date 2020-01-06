@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/conorrafferty/.oh-my-zsh"
+export ZSH="/home/craffer/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -24,25 +24,7 @@ DISABLE_AUTO_TITLE="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# lazyload nvm
-# all props goes to http://broken-by.me/lazy-load-nvm/
-# grabbed from reddit @ https://www.reddit.com/r/node/comments/4tg5jg/lazy_load_nvm_for_faster_shell_start/
-declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-
-NODE_GLOBALS+=("node")
-NODE_GLOBALS+=("nvm")
-
-load_nvm () {
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-}
-
-for cmd in "${NODE_GLOBALS[@]}"; do
-    eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
-done
-
 # set JAVA environment variable
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -69,12 +51,6 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# set CPATH for Xcode headers
-export CPATH="$(xcrun --show-sdk-path)/usr/include"
-
-# needed to make `fuck` command work
-eval $(thefuck --alias)
-
 # sets the terminal tab title to current dir
 precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
@@ -99,15 +75,15 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-# tab completion for colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
-
-# PATH stuff to make ruby gems work (colorls)
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH=~/.gem/ruby/2.6.0/bin:$PATH
-
 # P10k customization. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ls colors
+export LS_COLORS='di=34:fi=0:ln=35:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=33:*.rpm=90'
+alias ls="ls --color"
+
+# Tell ZSH not to exit when an error happens; only exit on quit
+setopt no_err_exit
 
 # hook direnv into shell
 eval "$(direnv hook zsh)"

@@ -3,7 +3,6 @@
 # For a full list of active aliases, run `alias`.
 
 # core
-alias ls="colorls"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -11,6 +10,9 @@ alias mv="mv -iv"
 alias cp="cp -iv"
 alias v="vim"
 alias x+="chmod +x"
+alias zsh="zsh-5.7.1"
+alias vim="$HOME/usr/bin/vim"
+alias trash="rm -rf"
 
 # macos
 alias ql="quick-look"
