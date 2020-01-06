@@ -1,4 +1,3 @@
 *.pyc
-config/configstore/
-config/direnv/allow/
 *.old
+config/*
