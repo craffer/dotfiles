@@ -12,6 +12,7 @@ alias v="vim"
 alias x+="chmod +x"
 alias zsh="zsh-5.7.1"
 alias vim="$HOME/usr/bin/vim"
+alias git="$HOME/usr/bin/git"
 alias trash="rm -rf"
 
 # macos
