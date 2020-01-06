@@ -175,7 +175,10 @@
     "oneDarkPro.bold": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "files.associations": {
-        "vimrc": "viml"
+        "vimrc": "viml",
+        "direnvrc": "shellscript",
+        "Caskfile": "shellscript",
+        "Brewfile": "shellscript"
     },
     "git.confirmSync": false,
     "[python]": {
