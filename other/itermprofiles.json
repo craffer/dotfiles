@@ -126,7 +126,7 @@
   "Title Components" : 1,
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
-  "Non Ascii Font" : "HasklugNerdFontComplete-Regular 11.5",
+  "Non Ascii Font" : "HasklugNerdFontComplete-Regular 12.5",
   "Vertical Spacing" : 1,
   "Use Bold Font" : true,
   "Option Key Sends" : 0,
@@ -386,7 +386,7 @@
     "Green Component" : 0.7137255072593689
   },
   "Guid" : "DD2EAE08-8A1C-49CE-AF3C-07396B3B20B1",
-  "Normal Font" : "Hasklig-Regular 12",
+  "Normal Font" : "Hasklig-Regular 13",
   "Ansi 2 Color" : {
     "Red Component" : 0.59607845544815063,
     "Color Space" : "Calibrated",
@@ -450,7 +450,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.12941177189350128
   },
-  "Normal Font" : "Hasklig-Regular 12",
+  "Normal Font" : "Hasklig-Regular 13",
   "Rows" : 25,
   "Default Bookmark" : "No",
   "Guid" : "03607298-38CC-47DE-BD5B-FC64EF86E57A",
@@ -531,7 +531,7 @@
   "Title Components" : 1,
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
-  "Non Ascii Font" : "HasklugNerdFontComplete-Regular 11.5",
+  "Non Ascii Font" : "HasklugNerdFontComplete-Regular 12.5",
   "Vertical Spacing" : 1,
   "Use Bold Font" : true,
   "Option Key Sends" : 0,
