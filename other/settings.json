@@ -184,6 +184,16 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "C_Cpp.intelliSenseCacheSize": 512
+    "C_Cpp.intelliSenseCacheSize": 512,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.views.repositories.location": "gitlens",
+    "gitlens.views.fileHistory.location": "gitlens",
+    "gitlens.views.lineHistory.location": "gitlens",
+    "gitlens.views.compare.location": "gitlens",
+    "gitlens.views.search.location": "gitlens",
+    "gitlens.views.compare.enabled": false,
+    "gitlens.defaultDateStyle": "absolute"
 }
 
