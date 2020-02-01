@@ -42,6 +42,7 @@ markdown:         md
 mkd:              md
 rdoc:             md
 readme:           md
+ppk:              pem
 gslides:          ppt
 pptx:             ppt
 ipynb:            py
