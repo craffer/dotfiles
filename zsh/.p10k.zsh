@@ -428,7 +428,7 @@
     (( VCS_STATUS_COMMITS_BEHIND )) && res+=" ${pink}${VCS_STATUS_COMMITS_BEHIND}⇣"
     # ⇡42 if ahead of the remote; no leading space if also behind the remote: ⇣42⇡42.
     (( VCS_STATUS_COMMITS_AHEAD && !VCS_STATUS_COMMITS_BEHIND )) && res+=" "
-    (( VCS_STATUS_COMMITS_AHEAD  )) && res+="${pink}${VCS_STATUS_COMMITS_AHEAD}⇡"
+    (( VCS_STATUS_COMMITS_AHEAD  )) && res+="%8F${VCS_STATUS_COMMITS_AHEAD}⇡"
 
     typeset -g my_git_format=$res
   }
