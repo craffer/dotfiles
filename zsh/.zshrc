@@ -80,14 +80,6 @@ precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
-# expand aliases into what they stand for on space
-expand-alias() {
-    zle _expand_alias
-    zle self-insert
-}
-zle -N expand-alias
-bindkey -M main ' ' expand-alias
-
 # speeds up pasting
 pasteinit() {
   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
