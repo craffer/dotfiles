@@ -54,3 +54,13 @@ update_plugins()
         fi
     done
 }
+
+update_shell()
+{
+    echo "Updating homebrew..."
+    brew update && brew upgrade && brew cleanup
+    echo "Updating zsh plugins..."
+    update_plugins
+    echo "Updating homebrew cask apps..."
+    upgrade_casks
+}
