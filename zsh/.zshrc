@@ -98,6 +98,10 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 
+# reduce indents
+export ZLE_RPROMPT_INDENT=0.75
+export ZLE_LPROMPT_INDENT=0.75
+
 # P10k customization. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
