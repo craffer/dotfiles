@@ -5,10 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/conorrafferty/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# enable auto-complete from middle of filename
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+autoload -Uz compinit
+compinit
 
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
@@ -38,9 +39,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # set CPATH for Xcode headers
 export CPATH="$(xcrun --show-sdk-path)/usr/include"
