@@ -81,6 +81,11 @@ export ZLE_LPROMPT_INDENT=0.75
 # hook direnv into shell
 eval "$(direnv hook zsh)"
 
+# source our various aliases and functions
+source ~/.zsh/aliases.zsh
+source ~/.dotfiles/zsh/functions.zsh ~/.zsh/functions.zsh
+source ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
