@@ -16,14 +16,6 @@ HYPHEN_INSENSITIVE="true"
 # Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 # lazyload nvm
 # all props goes to http://broken-by.me/lazy-load-nvm/
 # grabbed from reddit @ https://www.reddit.com/r/node/comments/4tg5jg/lazy_load_nvm_for_faster_shell_start/
@@ -43,25 +35,6 @@ done
 
 # set JAVA environment variable
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(
-    colored-man-pages
-    command-not-found
-    git
-    gitfast
-    osx
-    tmux
-    zsh-autosuggestions
-    zsh-output-highlighting
-    zsh-syntax-highlighting
-)
-
-# Activate oh-my-zsh manager
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
