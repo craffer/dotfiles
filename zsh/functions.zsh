@@ -41,5 +41,5 @@ update_shell()
     zinit self-update
     zinit update --all
     echo "Updating homebrew cask apps..."
-    upgrade_casks
+    brew cask upgrade
 }
