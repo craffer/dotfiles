@@ -4,6 +4,7 @@
 
 # core
 alias ls="colorls"
+alias la="colorls -a"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
