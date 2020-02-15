@@ -246,7 +246,7 @@
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_folders
   # Replace removed segment suffixes with this symbol.
-  typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=""
+  typeset -g POWERLEVEL9K_SHORTEN_DELIMITER="..."
   typeset -g POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=false
   # Color of the shortened directory segments.
   typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=4
