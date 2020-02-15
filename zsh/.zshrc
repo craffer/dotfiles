@@ -5,24 +5,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/conorrafferty/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# enable auto-complete from middle of filename
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+autoload -Uz compinit
+compinit
 
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
 # Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # lazyload nvm
 # all props goes to http://broken-by.me/lazy-load-nvm/
@@ -44,30 +37,8 @@ done
 # set JAVA environment variable
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(
-    colored-man-pages
-    command-not-found
-    git
-    gitfast
-    osx
-    tmux
-    zsh-autosuggestions
-    zsh-output-highlighting
-    zsh-syntax-highlighting
-)
-
-# Activate oh-my-zsh manager
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # set CPATH for Xcode headers
 export CPATH="$(xcrun --show-sdk-path)/usr/include"
@@ -98,8 +69,37 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 
+# reduce indents
+export ZLE_RPROMPT_INDENT=0.75
+export ZLE_LPROMPT_INDENT=0.75
+
 # P10k customization. To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # hook direnv into shell
 eval "$(direnv hook zsh)"
+
+# source our various aliases and functions
+source ~/.zsh/aliases.zsh
+source ~/.dotfiles/zsh/functions.zsh ~/.zsh/functions.zsh
+source ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f"
+fi
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit installer's chunk
+
+
+### Zinit plugins
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
+
+zinit ice depth=1; zinit light romkatv/powerlevel10k

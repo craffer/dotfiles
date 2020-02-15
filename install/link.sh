@@ -17,9 +17,9 @@ ln -svFh ~/.dotfiles/vim/vimrc ~/.vimrc
 # zsh
 ln -svFh ~/.dotfiles/zsh/.p10k.zsh ~
 ln -svFh ~/.dotfiles/zsh/.zshrc ~
-ln -svFh ~/.dotfiles/zsh/aliases.zsh ~/.oh-my-zsh/custom
-ln -svFh ~/.dotfiles/zsh/functions.zsh ~/.oh-my-zsh/custom
-ln -svFh ~/.dotfiles/zsh/shortcuts.zsh ~/.oh-my-zsh/custom
+ln -svFh ~/.dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
+ln -svFh ~/.dotfiles/zsh/functions.zsh ~/.zsh/functions.zsh
+ln -svFh ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
 
 # other
 ln -svFh ~/.dotfiles/other/.eslintrc.js ~
