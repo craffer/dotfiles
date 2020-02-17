@@ -43,3 +43,8 @@ update_shell()
     echo "Updating homebrew cask apps..."
     brew cask upgrade
 }
+
+quick-look()
+{
+    qlmanage -p "$@" >& /dev/null &
+}
