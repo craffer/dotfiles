@@ -1,6 +1,9 @@
+# system wide
 *.pyc
+*.old
+*.swp
+.DS_Store
+
+# dotfiles to ignore
 config/configstore/
 config/direnv/allow/
-*.old
-
-.DS_Store
