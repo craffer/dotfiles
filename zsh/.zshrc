@@ -104,3 +104,5 @@ zinit light zdharma/fast-syntax-highlighting
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
+
+export LS_COLORS="di=34:ln=35:or=31:ex=33"
