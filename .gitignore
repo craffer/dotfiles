@@ -7,3 +7,6 @@
 # dotfiles to ignore
 config/configstore/
 config/direnv/allow/
+
+# vim plugins handled by plugin manager
+vim/plugged/
