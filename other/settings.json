@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Hasklig, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Hasklig, 'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "editor.rulers": [100],
     "[javascript]": {
         "editor.tabSize": 2
