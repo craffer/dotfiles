@@ -196,6 +196,6 @@
     "gitlens.views.compare.enabled": false,
     "gitlens.defaultDateStyle": "absolute",
     "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 8
+    "workbench.editor.limit.value": 6
 }
 
