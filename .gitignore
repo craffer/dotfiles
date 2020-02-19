@@ -10,3 +10,4 @@ config/direnv/allow/
 
 # vim plugins handled by plugin manager
 vim/plugged/
+vim/autoload/
