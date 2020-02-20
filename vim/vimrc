@@ -16,6 +16,12 @@ Plug 'tpope/vim-fugitive'
 " file system explorer
 Plug 'scrooloose/nerdtree'
 
+" use gc to comment lines
+Plug 'tpope/vim-commentary'
+
+" change surrounding quotes, tags, etc. with cs
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 " set relativenumber, but only in normal mode
