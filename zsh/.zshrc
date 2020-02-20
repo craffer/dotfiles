@@ -17,23 +17,6 @@ HYPHEN_INSENSITIVE="true"
 # Disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
 
-# lazyload nvm
-# all props goes to http://broken-by.me/lazy-load-nvm/
-# grabbed from reddit @ https://www.reddit.com/r/node/comments/4tg5jg/lazy_load_nvm_for_faster_shell_start/
-declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-
-NODE_GLOBALS+=("node")
-NODE_GLOBALS+=("nvm")
-
-load_nvm () {
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-}
-
-for cmd in "${NODE_GLOBALS[@]}"; do
-    eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
-done
-
 # set JAVA environment variable
 export JAVA_HOME=$(/usr/libexec/java_home)
 
