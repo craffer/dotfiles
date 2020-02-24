@@ -12,10 +12,15 @@ autoload -Uz compinit
 compinit
 
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-
+setopt HYPHEN_INSENSITIVE
 # Disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+setopt DISABLE_AUTO_TITLE
+# `dirname` is equivalent to `cd dirname`
+setopt AUTO_CD
+# if history needs to be trimmed, evict dupes first
+setopt HIST_EXPIRE_DUPS_FIRST
+# print hex numbers as 0xFF instead of 16#FF
+setopt C_BASES
 
 # set JAVA environment variable
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -52,6 +57,9 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 
+# make ls and lsd pretty
+export LS_COLORS="di=34:fi=0:ln=35:or=31:ex=33"
+
 # reduce indents
 export ZLE_RPROMPT_INDENT=0.75
 export ZLE_LPROMPT_INDENT=0.75
@@ -87,5 +95,3 @@ zinit light zdharma/fast-syntax-highlighting
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
-
-export LS_COLORS="di=34:fi=0:ln=35:or=31:ex=33"
