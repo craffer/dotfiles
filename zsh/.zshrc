@@ -12,9 +12,9 @@ autoload -Uz compinit
 compinit
 
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-setopt HYPHEN_INSENSITIVE
+HYPHEN_INSENSITIVE="true"
 # Disable auto-setting terminal title.
-setopt DISABLE_AUTO_TITLE
+DISABLE_AUTO_TITLE="true"
 # `dirname` is equivalent to `cd dirname`
 setopt AUTO_CD
 # if history needs to be trimmed, evict dupes first
