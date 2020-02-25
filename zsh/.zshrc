@@ -21,6 +21,8 @@ setopt AUTO_CD
 setopt HIST_EXPIRE_DUPS_FIRST
 # print hex numbers as 0xFF instead of 16#FF
 setopt C_BASES
+# allow vi mode
+setopt VI
 
 # set JAVA environment variable
 export JAVA_HOME=$(/usr/libexec/java_home)
