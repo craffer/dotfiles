@@ -178,7 +178,8 @@
         "vimrc": "viml",
         "direnvrc": "shellscript",
         "Caskfile": "shellscript",
-        "Brewfile": "shellscript"
+        "Brewfile": "shellscript",
+        ".envrc": "shellscript"
     },
     "git.confirmSync": false,
     "[python]": {
