@@ -1397,6 +1397,9 @@
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
+  # this disables custom virtual environment names, which I don't like
+  typeset -g POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES=()
+
   # If p10k is already loaded, reload configuration.
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
   (( ! $+functions[p10k] )) || p10k reload
