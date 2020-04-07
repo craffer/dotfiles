@@ -2,7 +2,9 @@
     "editor.fontFamily": "Hasklig, 'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "editor.rulers": [100],
     "[javascript]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "python.pythonPath": "/usr/local/bin/python3",
     "code-runner.showExecutionMessage": false,
