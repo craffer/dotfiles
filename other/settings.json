@@ -149,7 +149,11 @@
     "editor.detectIndentation": false,
     "[javascriptreact]": {
         "editor.tabSize": 2,
-        "editor.rulers": [100]
+        "editor.rulers": [
+            100
+        ],
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     },
     "latex-workshop.latex.autoClean.run": "onFailed",
     "latex-workshop.latex.autoBuild.run": "onFileChange",
