@@ -33,7 +33,7 @@ how_in()
   IFS=+ curl "https://cht.sh/$where/ $*"
 }
 
-update_shell()
+upgrade_shell()
 {
     echo "Updating homebrew..."
     brew update && brew upgrade && brew cleanup
