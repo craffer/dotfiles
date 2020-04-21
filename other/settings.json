@@ -145,6 +145,24 @@
     "git.autofetch": true,
     "eslint.run": "onSave",
     "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorCustomizations": {
+        "terminal.ansiBlack": "#272c33",
+        "terminal.ansiBrightBlack": "#6f7683",
+        "terminal.ansiRed": "#e78287",
+        "terminal.ansiBrightRed": "#e78287",
+        "terminal.ansiGreen": "#a7cb8b",
+        "terminal.ansiBrightGreen": "#a7cb8b",
+        "terminal.ansiYellow": "#daaa78",
+        "terminal.ansiBrightYellow": "#daaa78",
+        "terminal.ansiBlue": "#71bdf2",
+        "terminal.ansiBrightBlue": "#71bdf2",
+        "terminal.ansiMagenta": "#d190e3",
+        "terminal.ansiBrightMagenta": "#d190e3",
+        "terminal.ansiCyan": "#65c1cd",
+        "terminal.ansiBrightCyan": "#65c1cd",
+        "terminal.ansiWhite": "#b9bfca",
+        "terminal.ansiBrightWhite": "#fefefe"
+    },
     "editor.detectIndentation": false,
     "[javascriptreact]": {
         "editor.tabSize": 2,
@@ -196,6 +214,6 @@
     "gitlens.defaultDateStyle": "absolute",
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 6,
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
 }
 
