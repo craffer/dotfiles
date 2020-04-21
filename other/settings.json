@@ -140,7 +140,6 @@
         }
     ],
     "window.zoomLevel": 0,
-    "python.linting.pycodestyleEnabled": true,
     "liveshare.allowGuestDebugControl": true,
     "liveshare.populateGitCoAuthors": "always",
     "git.autofetch": true,
@@ -161,7 +160,6 @@
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.fontFamily": "Hasklug Nerd Font",
     "editor.fontLigatures": true,
-    "python.linting.pycodestylePath": "pycodestyle",
     "liveshare.featureSet": "insiders",
     "telemetry.enableTelemetry": false,
     "code-runner.enableAppInsights": false,
@@ -174,9 +172,6 @@
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100}",
-    "python.linting.pycodestyleArgs": [
-        "--max-line-length=120"
-    ],
     "git.untrackedChanges": "mixed",
     "oneDarkPro.bold": true,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -188,9 +183,6 @@
         ".envrc": "shellscript"
     },
     "git.confirmSync": false,
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
-    },
     "C_Cpp.intelliSenseCacheSize": 512,
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
@@ -203,6 +195,7 @@
     "gitlens.views.compare.enabled": false,
     "gitlens.defaultDateStyle": "absolute",
     "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 6
+    "workbench.editor.limit.value": 6,
+    "python.formatting.provider": "black"
 }
 
