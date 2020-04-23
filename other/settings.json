@@ -215,5 +215,6 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.value": 6,
     "python.formatting.provider": "black",
+    "javascript.updateImportsOnFileMove.enabled": "always",
 }
 
