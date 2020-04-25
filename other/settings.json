@@ -6,6 +6,10 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[css]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "michelemelluso.code-beautifier"
+    },
     "python.pythonPath": "/usr/local/bin/python3",
     "code-runner.showExecutionMessage": false,
     "code-runner.saveAllFilesBeforeRun": true,
