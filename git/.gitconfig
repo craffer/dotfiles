@@ -24,6 +24,8 @@
 
 [core]
     editor = vim
+	autoclrf = input
+	safeclrf = true
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
