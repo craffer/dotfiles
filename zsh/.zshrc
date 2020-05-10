@@ -95,5 +95,9 @@ autoload -Uz _zinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 
+# disable syntax highlighting for man pages to prevent hanging
+# see https://github.com/zdharma/fast-syntax-highlighting/issues/179
+FAST_HIGHLIGHT[chroma-man]=
+
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
