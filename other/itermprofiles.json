@@ -820,12 +820,6 @@
   },
   "Triggers" : [
     {
-      "action" : "PasswordTrigger",
-      "parameter" : "",
-      "regex" : "Password:",
-      "partial" : true
-    },
-    {
       "action" : "SendTextTrigger",
       "parameter" : "1\\n",
       "regex" : "Duo two-factor",
