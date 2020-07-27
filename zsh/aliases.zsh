@@ -3,9 +3,9 @@
 # For a full list of active aliases, run `alias`.
 
 # core
-alias ls="~/Other/coding/forks/lsd/target/release/lsd"
-alias la="~/Other/coding/forks/lsd/target/release/lsd -a"
-alias ll="~/Other/coding/forks/lsd/target/release/lsd -la"
+alias ls="lsd"
+alias la="lsd -a"
+alias ll="lsd -la"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
