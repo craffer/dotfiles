@@ -1248,12 +1248,12 @@
   typeset -g POWERLEVEL9K_VPN_IP_FOREGROUND=3
   # When on VPN, show just an icon without the IP address.
   # Tip: To display the private IP address when on VPN, remove the next line.
-  # typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
+  typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
   # Regular expression for the VPN network interface. Run `ifconfig` or `ip -4 a show` while on VPN
   # to see the name of the interface.
   typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(wg|(.*tun))[0-9]*'
   # Custom icon.
-  # typeset -g POWERLEVEL9K_VPN_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_VPN_IP_VISUAL_IDENTIFIER_EXPANSION=$'\uf65e '
 
   ###########[ ip: ip address and bandwidth usage for a specified network interface ]###########
   # IP color.
