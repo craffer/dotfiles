@@ -2,9 +2,12 @@ akamud.vscode-theme-onelight
 DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
 dunstontc.viml
+eamodio.gitlens
+esbenp.prettier-vscode
 formulahendry.code-runner
 hdg.live-html-previewer
 James-Yu.latex-workshop
+michelemelluso.code-beautifier
 ms-python.python
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
@@ -14,9 +17,12 @@ ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.cpptools
 ms-vscode.wordcount
 ms-vsliveshare.vsliveshare
+PKief.material-icon-theme
+rust-lang.rust
 tehnix.vscode-tidymarkdown
 thekalinga.bootstrap4-vscode
 tomoki1207.pdf
 yzane.markdown-pdf
 yzhang.markdown-all-in-one
 zhuangtongfa.material-theme
+Zignd.html-css-class-completion
