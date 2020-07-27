@@ -52,12 +52,6 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-# tab completion for colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
-
-# PATH stuff to make ruby gems work (colorls)
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 
 # make ls and lsd pretty
 export LS_COLORS="di=34:fi=0:ln=35:or=31:ex=33"
