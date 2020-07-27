@@ -33,6 +33,9 @@ export EDITOR='vim'
 # set CPATH for Xcode headers
 export CPATH="$(xcrun --show-sdk-path)/usr/include"
 
+# add Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # needed to make `fuck` command work
 eval $(thefuck --alias)
 
