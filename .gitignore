@@ -5,8 +5,7 @@
 .DS_Store
 
 # dotfiles to ignore
-config/configstore/
-config/direnv/allow/
+config/*
 
 # vim plugins handled by plugin manager
 vim/plugged/
