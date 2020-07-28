@@ -1,6 +1,7 @@
 [user]
 	name = Conor Rafferty
-	email = craffer@umich.edu
+	email = conor.rafferty@salesforce.com
+	signingkey = D958A039DDF69A92
 
 [color]
     ui = auto
@@ -56,3 +57,5 @@
 	branch = false
 [pull]
 	rebase = false
+[commit]
+	gpgsign = true
