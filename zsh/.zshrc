@@ -98,3 +98,9 @@ FAST_HIGHLIGHT[chroma-man]=
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
+
+if [ -f /Users/conor.rafferty/.ansible/env.sh ]; then
+    . /Users/conor.rafferty/.ansible/env.sh
+    # To disable ansible, comment out, but do not delete the following:
+    activate_ansible
+fi

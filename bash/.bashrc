@@ -27,3 +27,9 @@ export NVM_DIR="$HOME/.nvm"
 if [ $ITERM_SESSION_ID ]; then
     export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 fi
+
+if [ -f /Users/conor.rafferty/.ansible/env.sh ]; then
+    . /Users/conor.rafferty/.ansible/env.sh
+    # To disable ansible, comment out, but do not delete the following:
+    activate_ansible
+fi
