@@ -36,6 +36,9 @@ export CPATH="$(xcrun --show-sdk-path)/usr/include"
 # add Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# update PATH to include personal bin if it exists
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+
 # needed to make `fuck` command work
 eval $(thefuck --alias)
 

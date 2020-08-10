@@ -61,3 +61,5 @@
 	gpgsign = true
 [gpg]
 	program = /usr/local/bin/gpg
+[credential]
+	helper = cache --timeout=86400
