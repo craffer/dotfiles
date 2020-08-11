@@ -71,6 +71,8 @@
     # fvm                   # flutter version management (https://github.com/leoafarias/fvm)
     luaenv                  # lua version from luaenv (https://github.com/cehoffman/luaenv)
     jenv                    # java version from jenv (https://github.com/jenv/jenv)
+    my_ansible
+    my_blt
     plenv                   # perl version from plenv (https://github.com/tokuhirom/plenv)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     terraform               # terraform workspace (https://www.terraform.io)
@@ -1323,6 +1325,20 @@
   # All parameters except P9K_WIFI_BARS are extracted from the output of the following command:
   #
   #   /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
+
+  ####################################[ ansible: is ansible active ]###############################
+    function prompt_my_ansible() {
+        if [[ -v ANSIBLE_INVENTORY ]]; then
+            p10k segment -i $'\uF0AD ' -f 223
+        fi
+    }
+
+####################################[ blt: is blt active ]###############################
+    function prompt_my_blt() {
+        if [[ -v BLT_HOME ]]; then
+            p10k segment -i $'\uE28D ' -f 223
+        fi
+    }
 
   ####################################[ time: current time ]####################################
   # Current time color.
