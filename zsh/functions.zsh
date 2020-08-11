@@ -48,3 +48,8 @@ quick-look()
 {
     qlmanage -p "$@" >& /dev/null &
 }
+
+activate_blt()
+{
+    source ~/blt/env.sh
+}
