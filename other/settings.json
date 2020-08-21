@@ -220,5 +220,7 @@
     "workbench.editor.limit.value": 6,
     "python.formatting.provider": "black",
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
 
