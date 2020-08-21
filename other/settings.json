@@ -222,5 +222,14 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Microsoft",
+    "java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home/",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.semanticHighlighting.enabled": true,
 }
 
