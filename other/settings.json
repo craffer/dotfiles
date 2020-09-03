@@ -1,11 +1,6 @@
 {
     "editor.fontFamily": "Hasklig, 'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "editor.rulers": [100],
-    "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "[css]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "michelemelluso.code-beautifier"
@@ -217,7 +212,6 @@
     "gitlens.views.compare.enabled": false,
     "gitlens.defaultDateStyle": "absolute",
     "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.value": 6,
     "python.formatting.provider": "black",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.suggestSelection": "first",
