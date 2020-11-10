@@ -30,6 +30,7 @@ alias showfs="~/UofM/F19/EECS_482/p4/utility/showfs_macos"
 # directory shortcuts
 alias projects="cd ~/Other/coding/projects"
 alias coding="cd ~/Other/coding/"
+alias sf="cd ~/dev/salesforce/"
 alias dotfiles="cd ~/.dotfiles"
 alias uofm="cd ~/UofM"
 alias ufom="cd ~/UofM"
