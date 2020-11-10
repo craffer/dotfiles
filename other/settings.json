@@ -5,6 +5,12 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "michelemelluso.code-beautifier"
     },
+    "[python]": {
+        "editor.formatOnSave": true,
+    },
+    "[javascript, javascriptreact]": {
+        "editor.tabSize": 2,
+    },
     "python.pythonPath": "/usr/local/bin/python3",
     "code-runner.showExecutionMessage": false,
     "code-runner.saveAllFilesBeforeRun": true,
@@ -168,7 +174,6 @@
         "editor.rulers": [
             100
         ],
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
     "latex-workshop.latex.autoClean.run": "onFailed",
@@ -225,5 +230,9 @@
         "**/.factorypath": true
     },
     "java.semanticHighlighting.enabled": true,
+    "editor.formatOnSaveMode": "modifications",
+    "python.showStartPage": false,
+    "java.refactor.renameFromFileExplorer": "autoApply",
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
 
