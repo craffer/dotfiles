@@ -1,12 +1,15 @@
 {
     "editor.fontFamily": "Hasklig, 'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
-    "editor.rulers": [100],
+    "editor.rulers": [
+        100
+    ],
     "[css]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "michelemelluso.code-beautifier"
     },
     "[python]": {
         "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
     },
     "[javascript, javascriptreact]": {
         "editor.tabSize": 2,
@@ -68,7 +71,6 @@
     },
     "code-runner.customCommand": "echo \"custom command\"",
     "debug.allowBreakpointsEverywhere": true,
-    "python.linting.pydocstyleEnabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
         {
@@ -144,7 +146,6 @@
             ]
         }
     ],
-    "window.zoomLevel": 0,
     "liveshare.allowGuestDebugControl": true,
     "liveshare.populateGitCoAuthors": "always",
     "git.autofetch": true,
@@ -202,13 +203,14 @@
         "direnvrc": "shellscript",
         "Caskfile": "shellscript",
         "Brewfile": "shellscript",
-        ".envrc": "shellscript"
+        ".envrc": "shellscript",
+        "*.txt": "plaintext",
+        "*.stack": "log"
     },
     "git.confirmSync": false,
     "C_Cpp.intelliSenseCacheSize": 512,
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
     "gitlens.views.repositories.location": "gitlens",
     "gitlens.views.fileHistory.location": "gitlens",
     "gitlens.views.lineHistory.location": "gitlens",
@@ -221,7 +223,7 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Pylance",
     "java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home/",
     "files.exclude": {
         "**/.classpath": true,
@@ -233,6 +235,42 @@
     "editor.formatOnSaveMode": "modifications",
     "python.showStartPage": false,
     "java.refactor.renameFromFileExplorer": "autoApply",
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "gitlens.codeLens.enabled": false,
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "path": "/Library/Java/JavaVirtualMachines/openjdk1.8.0_212_x64/",
+            "default": true
+        }
+    ],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "workbench.editor.decorations.badges": false,
+    "gitlens.remotes": [
+        {
+            "domain": "git.soma.salesforce.com",
+            "type": "Custom",
+            "name": "Salesforce GitHub",
+            "protocol": "https",
+            "urls": {
+                "repository": "https://git.soma.salesforce.com/${repo}",
+                "branches": "https://git.soma.salesforce.com/${repo}/branches",
+                "branch": "https://git.soma.salesforce.com/${repo}/commits/${branch}",
+                "commit": "https://git.soma.salesforce.com/${repo}/commit/${id}",
+                "file": "https://git.soma.salesforce.com/${repo}?path=${file}${line}",
+                "fileInBranch": "https://git.soma.salesforce.com/${repo}/blob/${branch}/${file}${line}",
+                "fileInCommit": "https://git.soma.salesforce.com/${repo}/blob/${id}/${file}${line}",
+                "fileLine": "#L${line}",
+                "fileRange": "#L${start}-L${end}"
+            }
+        }
+    ],
+    "window.zoomLevel": 1,
+    "redhat.telemetry.enabled": false
 }
-
