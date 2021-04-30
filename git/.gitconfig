@@ -68,3 +68,5 @@
 	autosetuprebase = always
 [branch "master"]
 	rebase = true
+[init]
+	defaultBranch = master
