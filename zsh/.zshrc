@@ -25,7 +25,7 @@ setopt C_BASES
 setopt VI
 
 # set JAVA environment variable
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk1.8.0_212_x64/
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -40,6 +40,9 @@ export MADEIRA_HOME="/Users/conor.rafferty/dev/salesforce/madeira"
 
 # update PATH to include personal bin if it exists
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+
+# add spark to PATH
+export PATH=$PATH:/usr/local/spark/bin
 
 # needed to make `fuck` command work
 eval $(thefuck --alias)
@@ -104,8 +107,17 @@ FAST_HIGHLIGHT[chroma-man]=
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
 
-if [ -f /Users/conor.rafferty/.ansible/env.sh ]; then
-    . /Users/conor.rafferty/.ansible/env.sh
-    # To disable ansible, comment out, but do not delete the following:
-    activate_ansible
-fi
+# if [ -f /Users/conor.rafferty/.ansible/env.sh ]; then
+#     . /Users/conor.rafferty/.ansible/env.sh
+#     # To disable ansible, comment out, but do not delete the following:
+#     activate_ansible
+# fi
+
+source /Users/conor.rafferty/.bootstrap_rc
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Vi style:
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
