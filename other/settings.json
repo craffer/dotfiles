@@ -19,7 +19,6 @@
     "code-runner.saveAllFilesBeforeRun": true,
     "code-runner.clearPreviousOutput": true,
     "workbench.startupEditor": "none",
-    "workbench.statusBar.feedback.visible": false,
     "window.newWindowDimensions": "inherit",
     "extensions.showRecommendationsOnlyOnDemand": true,
     "C_Cpp.default.cppStandard": "c++11",
@@ -211,12 +210,6 @@
     "C_Cpp.intelliSenseCacheSize": 512,
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
-    "gitlens.views.repositories.location": "gitlens",
-    "gitlens.views.fileHistory.location": "gitlens",
-    "gitlens.views.lineHistory.location": "gitlens",
-    "gitlens.views.compare.location": "gitlens",
-    "gitlens.views.search.location": "gitlens",
-    "gitlens.views.compare.enabled": false,
     "gitlens.defaultDateStyle": "absolute",
     "workbench.editor.limit.enabled": true,
     "python.formatting.provider": "black",
@@ -224,17 +217,16 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
-    "java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.2.jdk/Contents/Home/",
+    "java.home": "/Library/Java/JavaVirtualMachines/sfdc-openjdk_11.0.9_11.43.54.jdk/Contents/Home/",
     "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
+        "**/.classpath": false,
+        "**/.project": false,
+        "**/.settings": false,
+        "**/.factorypath": false
     },
     "java.semanticHighlighting.enabled": true,
     "editor.formatOnSaveMode": "modifications",
     "python.showStartPage": false,
-    "java.refactor.renameFromFileExplorer": "autoApply",
     "java.configuration.updateBuildConfiguration": "automatic",
     "gitlens.codeLens.enabled": false,
     "java.project.importOnFirstTimeStartup": "automatic",
@@ -271,6 +263,5 @@
             }
         }
     ],
-    "window.zoomLevel": 1,
     "redhat.telemetry.enabled": false
 }
