@@ -40,8 +40,6 @@ upgrade_shell()
     echo "Updating zsh plugins..."
     zinit self-update
     zinit update --all
-    echo "Updating homebrew cask apps..."
-    brew cask upgrade
 }
 
 quick-look()
