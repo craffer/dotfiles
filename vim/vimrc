@@ -43,6 +43,7 @@ set timeoutlen=1000
 set ttimeoutlen=10
 
 " other options
+set ignorecase
 set smartcase
 filetype plugin indent on
 set shiftwidth=4
