@@ -8,10 +8,16 @@
         "editor.defaultFormatter": "michelemelluso.code-beautifier"
     },
     "[python]": {
-        "editor.formatOnSave": true,
+        "editor.formatOnSave": false,
         "editor.formatOnSaveMode": "file",
     },
-    "[javascript, javascriptreact]": {
+    "[javascript]": {
+        "editor.tabSize": 2,
+    },
+    "[jinja-json]": {
+        "editor.tabSize": 2,
+    },
+    "[terraform]": {
         "editor.tabSize": 2,
     },
     "python.pythonPath": "/usr/local/bin/python3",
@@ -204,7 +210,12 @@
         "Brewfile": "shellscript",
         ".envrc": "shellscript",
         "*.txt": "plaintext",
-        "*.stack": "log"
+        "*.stack": "log",
+        "_helpers.tpl": "helm",
+        "configure-cluster.tpl": "shellscript",
+        "*.tpl": "properties",
+        "*.j2": "jinja-json",
+        "*.service": "systemd-unit-file"
     },
     "git.confirmSync": false,
     "C_Cpp.intelliSenseCacheSize": 512,
@@ -237,12 +248,9 @@
             "default": true
         }
     ],
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "workbench.editor.decorations.badges": false,
     "gitlens.remotes": [
         {
@@ -263,5 +271,13 @@
             }
         }
     ],
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "puppet.titleBar.pdkNewModule.enable": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "window.zoomLevel": 1
 }
