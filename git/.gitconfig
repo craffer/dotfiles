@@ -1,6 +1,7 @@
 [user]
 	name = Conor Rafferty
-	email = craffer@umich.edu
+	email = conor.rafferty01@gmail.com
+	signingkey = 38ADDA7C28A4173D
 
 [color]
     ui = auto
