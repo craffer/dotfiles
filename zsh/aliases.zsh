@@ -53,8 +53,8 @@ alias dossh="ssh craffer@134.209.43.248"
 alias tomcat="catalina"
 
 # salesforce specific
-alias huron="presto --server https://bdmpresto-huron-query.presto.uip.aws-esvc1-useast2.aws.sfdc.cl:443 \
---truststore-path /Users/conor.rafferty/dev/salesforce/certs/certs-truststore.pem \
+alias huron="trino --server https://bdmpresto-huron-query.presto.uip.aws-esvc1-useast2.aws.sfdc.cl:443 \
+--truststore-path /Users/conor.rafferty/dev/salesforce/certs/other/certs-truststore.pem \
 --catalog coreapplogs \
 --schema log_record_types \
 --user conor.rafferty \

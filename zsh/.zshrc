@@ -1,3 +1,4 @@
+source /Users/conor.rafferty/.bootstrap_rc
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -23,6 +24,8 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt C_BASES
 # allow vi mode
 setopt VI
+# turn on timestamps in history
+setopt EXTENDED_HISTORY
 
 # set JAVA environment variable
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk1.8.0_212_x64/
@@ -84,9 +87,9 @@ source ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma-continuum/zinit)…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
         print -P "%F{160}▓▒░ The clone has failed.%f"
 fi
@@ -95,14 +98,16 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit installer's chunk
 
+export NVM_LAZY_LOAD=true
 
 ### Zinit plugins
 zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light lukechilds/zsh-nvm
 
 # disable syntax highlighting for man pages to prevent hanging
-# see https://github.com/zdharma/fast-syntax-highlighting/issues/179
-FAST_HIGHLIGHT[chroma-man]=
+# see https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/179
+# FAST_HIGHLIGHT[chroma-man]=
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
@@ -113,7 +118,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 #     activate_ansible
 # fi
 
-source /Users/conor.rafferty/.bootstrap_rc
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
