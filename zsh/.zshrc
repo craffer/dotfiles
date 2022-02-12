@@ -113,3 +113,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
+
+export NVM_LAZY_LOAD=true
+export GPG_TTY=$(tty)
