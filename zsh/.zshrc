@@ -23,6 +23,8 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt C_BASES
 # allow vi mode
 setopt VI
+# turn on timestamps in history
+setopt EXTENDED_HISTORY
 
 # set JAVA environment variable
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -99,11 +101,15 @@ zinit light-mode for \
 
 ### Zinit plugins
 zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
-
-# disable syntax highlighting for man pages to prevent hanging
-# see https://github.com/zdharma/fast-syntax-highlighting/issues/179
-FAST_HIGHLIGHT[chroma-man]=
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light lukechilds/zsh-nvm
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Vi style:
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
