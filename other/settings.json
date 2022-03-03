@@ -214,6 +214,8 @@
         "_helpers.tpl": "helm",
         "configure-cluster.tpl": "shellscript",
         "*.tpl": "properties",
+        "*compose-certs.tpl": "shellscript",
+        "tools.tpl": "shellscript",
         "*.j2": "jinja-json",
         "*.service": "systemd-unit-file"
     },
