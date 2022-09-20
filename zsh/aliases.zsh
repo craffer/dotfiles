@@ -54,7 +54,7 @@ alias tomcat="catalina"
 
 # salesforce specific
 alias huron="trino --server https://bdmpresto-huron-query.presto.uip.aws-esvc1-useast2.aws.sfdc.cl:443 \
---truststore-path /Users/conor.rafferty/dev/salesforce/certs/other/certs-truststore.pem \
+--truststore-path /Users/conor.rafferty/dev/salesforce/other/personal/certs/huron/cacerts.pem \
 --catalog coreapplogs \
 --schema log_record_types \
 --user conor.rafferty \
