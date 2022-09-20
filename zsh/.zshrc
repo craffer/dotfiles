@@ -27,8 +27,14 @@ setopt VI
 # turn on timestamps in history
 setopt EXTENDED_HISTORY
 
-# set JAVA environment variable
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk1.8.0_212_x64/
+# set default Java home to Java 11
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk_11.0.14.1_11.54.26_x64"
+
+export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/openjdk1.8.0.322_8.60.0.22_x64"
+export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/openjdk_11.0.14.1_11.54.26_x64"
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
