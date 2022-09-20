@@ -20,6 +20,12 @@
     "[terraform]": {
         "editor.tabSize": 2,
     },
+    "[json]": {
+        "editor.tabSize": 2,
+    },
+    "[jsonc]": {
+        "editor.tabSize": 2,
+    },
     "python.pythonPath": "/usr/local/bin/python3",
     "code-runner.showExecutionMessage": false,
     "code-runner.saveAllFilesBeforeRun": true,
@@ -202,7 +208,6 @@
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100}",
     "git.untrackedChanges": "mixed",
     "oneDarkPro.bold": true,
-    "diffEditor.ignoreTrimWhitespace": false,
     "files.associations": {
         "vimrc": "viml",
         "direnvrc": "shellscript",
@@ -217,7 +222,8 @@
         "*compose-certs.tpl": "shellscript",
         "tools.tpl": "shellscript",
         "*.j2": "jinja-json",
-        "*.service": "systemd-unit-file"
+        "*.service": "systemd-unit-file",
+        "*.slackworkflow": "json"
     },
     "git.confirmSync": false,
     "C_Cpp.intelliSenseCacheSize": 512,
@@ -281,5 +287,9 @@
     "puppet.titleBar.pdkNewModule.enable": false,
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
+    "gitlens.statusBar.dateFormat": "MMMM Do, YYYY, h:mm a",
+    "search.followSymlinks": false,
+    "gitlens.plusFeatures.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": false,
     "window.zoomLevel": 1
 }
