@@ -32,7 +32,6 @@
     "code-runner.clearPreviousOutput": true,
     "workbench.startupEditor": "none",
     "window.newWindowDimensions": "inherit",
-    "extensions.showRecommendationsOnlyOnDemand": true,
     "C_Cpp.default.cppStandard": "c++11",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "git.showPushSuccessNotification": true,
@@ -291,5 +290,7 @@
     "search.followSymlinks": false,
     "gitlens.plusFeatures.enabled": false,
     "diffEditor.ignoreTrimWhitespace": false,
-    "window.zoomLevel": 1
+    "vs-kubernetes": {
+      "vscode-kubernetes.minikube-path.mac": "/Users/conor.rafferty/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+    }
 }

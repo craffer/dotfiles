@@ -33,6 +33,8 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk_11.0.14.1_11.54.26_x
 export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/openjdk1.8.0.322_8.60.0.22_x64"
 export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/openjdk_11.0.14.1_11.54.26_x64"
 
+export XDG_CONFIG_HOME="~/"
+
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 
