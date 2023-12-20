@@ -27,16 +27,18 @@ setopt VI
 # turn on timestamps in history
 setopt EXTENDED_HISTORY
 
-# set default Java home to Java 11
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk_11.0.14.1_11.54.26_x64"
+export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/zulu8.72.0.18-sa-jdk8.0.382-macosx_aarch64/zulu-8.jdk/Contents/Home"
+export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/sfdc-openjdk_11.0.20.1.101_11.67.16.jdk/Contents/Home"
+export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/zulu17.46.20-sa-jdk17.0.9-macosx_aarch64/zulu-17.jdk/Contents/Home"
 
-export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/openjdk1.8.0.322_8.60.0.22_x64"
-export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/openjdk_11.0.14.1_11.54.26_x64"
+# set default Java home to Java 11
+export JAVA_HOME=$JAVA_11_HOME
 
 export XDG_CONFIG_HOME="~/"
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias java17='export JAVA_HOME=$JAVA_17_HOME'
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
