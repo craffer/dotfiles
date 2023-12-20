@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Hasklig, 'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'Hasklug Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
     "editor.rulers": [
         100
     ],
@@ -160,7 +160,6 @@
     "liveshare.populateGitCoAuthors": "always",
     "git.autofetch": true,
     "eslint.run": "onSave",
-    "workbench.colorTheme": "One Dark Pro",
     "workbench.colorCustomizations": {
         "terminal.ansiBlack": "#272c33",
         "terminal.ansiBrightBlack": "#6f7683",
@@ -191,7 +190,6 @@
     "latex-workshop.latex.autoBuild.run": "onFileChange",
     "explorer.confirmDelete": false,
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.fontFamily": "Hasklug Nerd Font",
     "editor.fontLigatures": true,
     "liveshare.featureSet": "insiders",
     "telemetry.enableTelemetry": false,
@@ -235,7 +233,7 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
-    "java.home": "/Library/Java/JavaVirtualMachines/sfdc-openjdk_11.0.9_11.43.54.jdk/Contents/Home/",
+    "java.home": "/Library/Java/JavaVirtualMachines/sfdc-openjdk_11.0.20.1.101_11.67.16.jdk/Contents/Home",
     "files.exclude": {
         "**/.classpath": false,
         "**/.project": false,
@@ -251,8 +249,8 @@
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-1.8",
-            "path": "/Library/Java/JavaVirtualMachines/openjdk1.8.0_212_x64/",
-            "default": true
+            "path": "/Library/Java/JavaVirtualMachines/zulu8.72.0.18-sa-jdk8.0.382-macosx_aarch64/zulu-8.jdk/Contents/Home",
+            "default": false
         }
     ],
     "workbench.editorAssociations": {
@@ -292,5 +290,15 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "vs-kubernetes": {
       "vscode-kubernetes.minikube-path.mac": "/Users/conor.rafferty/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-    }
+    },
+    "perforce.editOnFileModified": true,
+    "perforce.swarmHost": "https://swarm.soma.salesforce.com",
+    "github-enterprise.uri": "https://git.soma.salesforce.com/",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "'Hasklug Nerd Font Mono', 'MesloLGS NF'",
+    "workbench.colorTheme": "One Dark Pro",
+    "security.workspace.trust.untrustedFiles": "open",
+    "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/zulu17.46.20-sa-jdk17.0.9-macosx_aarch64/zulu-17.jdk/Contents/Home"
 }
