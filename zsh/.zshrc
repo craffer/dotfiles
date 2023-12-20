@@ -40,6 +40,15 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
 
+# contains paths to my client-user certs
+export CA_CERT_DIR="~/dev/salesforce/other/personal/certs/client-user/ca"
+export CA_CERT_FILE="~/dev/salesforce/other/personal/certs/client-user/ca/cacert.pem"
+export CERT_FILE="/Users/conor.rafferty/dev/salesforce/other/personal/certs/client-user/client/certificates/cert.pem"
+export CERT_KEY_FILE="/Users/conor.rafferty/dev/salesforce/other/personal/certs/client-user/client/keys/conor.rafferty.user.sfdc.net_20231220.privkey.pem"
+
+# my Splunk/Aloha username
+export USERNAME="conor.rafferty"
+
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
