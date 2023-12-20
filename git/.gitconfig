@@ -61,7 +61,7 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [credential]
 	helper = cache --timeout=86400
 [branch]
