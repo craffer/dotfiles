@@ -59,3 +59,5 @@ alias huron="trino --server https://bdmpresto-huron-query.presto.uip.aws-esvc1-u
 --schema log_record_types \
 --user conor.rafferty \
 --password"
+alias fdev1='ssh -t bastion.syssec.monitoring.fdev1-uswest2.aws.sfdc.cl "tmux -CC new -A -s tmux-main"'
+alias dev1='ssh -t bastion.syssec.monitoring.dev1-uswest2.aws.sfdc.cl "tmux -CC new -A -s tmux-main"'
