@@ -103,6 +103,23 @@ eval "$(direnv hook zsh)"
 source ~/.zsh/aliases.zsh
 source ~/.dotfiles/zsh/functions.zsh ~/.zsh/functions.zsh
 source ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
+# Auto-export Nexus credentials from Maven settings
+export_nexus_credentials() {
+  local maven_settings="$HOME/.m2/settings.xml"
+  if [[ -f "$maven_settings" ]]; then
+    # Extract username and password from the first server entry (nexus)
+    local username=$(xmllint --xpath "(//*[local-name()='settings']/*[local-name()='servers']/*[local-name()='server']/*[local-name()='username']/text())[1]" $maven_settings 2>/dev/null)
+    local password=$(xmllint --xpath "(//*[local-name()='settings']/*[local-name()='servers']/*[local-name()='server']/*[local-name()='password']/text())[1]" "$maven_settings" 2>/dev/null)
+    
+    if [[ -n "$username" && -n "$password" ]]; then
+      export NEXUS_USERNAME="$username"
+      export NEXUS_PASSWORD="$password"
+    fi
+  fi
+}
+
+# Call the function to export credentials
+export_nexus_credentials
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
