@@ -10,3 +10,6 @@ config/*
 # vim plugins handled by plugin manager
 vim/plugged/
 vim/autoload/
+
+secrets.zsh
+.zshenv

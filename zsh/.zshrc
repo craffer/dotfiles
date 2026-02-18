@@ -1,4 +1,4 @@
-source /Users/conor.rafferty/.bootstrap_rc
+source "$HOME/.bootstrap_rc"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -27,27 +27,34 @@ setopt VI
 # turn on timestamps in history
 setopt EXTENDED_HISTORY
 
-export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/zulu8.72.0.18-sa-jdk8.0.382-macosx_aarch64/zulu-8.jdk/Contents/Home"
-export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/sfdc-openjdk_11.0.20.1.101_11.67.16.jdk/Contents/Home"
-export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/zulu17.46.20-sa-jdk17.0.9-macosx_aarch64/zulu-17.jdk/Contents/Home"
+export JAVA_8_HOME="/Library/Java/JavaVirtualMachines/openjdk1.8.0.401_8.75.0.16_aarch64/zulu-8.jdk/Contents/Home"
+export JAVA_11_HOME="/Library/Java/JavaVirtualMachines/openjdk_11.0.21.0.101_11.69.14_aarch64/zulu-11.jdk/Contents/Home"
+export JAVA_17_HOME="/Library/Java/JavaVirtualMachines/openjdk_17.0.10_17.48.16_aarch64/zulu-17.jdk/Contents/Home"
+export JAVA_24_HOME="/Library/Java/JavaVirtualMachines/zulu24.30.11-ca-jdk24.0.1-macosx_aarch64/zulu-24.jdk/Contents/Home"
+export JAVA_25_HOME="/Library/Java/JavaVirtualMachines/sfdc-jdk-zulu-25.0.1.0.101_17-macos_aarch64/zulu-25.jdk/Contents/Home"
 
-# set default Java home to Java 11
-export JAVA_HOME=$JAVA_11_HOME
+# set default Java home to Java 17
+export JAVA_HOME=$JAVA_17_HOME
 
-export XDG_CONFIG_HOME="~/"
+export XDG_CONFIG_HOME=~/
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
+alias java24='export JAVA_HOME=$JAVA_24_HOME'
+alias java25='export JAVA_HOME=$JAVA_25_HOME'
 
-# contains paths to my client-user certs
-export CA_CERT_DIR="~/dev/salesforce/other/personal/certs/client-user/ca"
-export CA_CERT_FILE="~/dev/salesforce/other/personal/certs/client-user/ca/cacert.pem"
-export CERT_FILE="/Users/conor.rafferty/dev/salesforce/other/personal/certs/client-user/client/certificates/cert.pem"
-export CERT_KEY_FILE="/Users/conor.rafferty/dev/salesforce/other/personal/certs/client-user/client/keys/conor.rafferty.user.sfdc.net_20231220.privkey.pem"
+# use Apple Silicon brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# enable falcon cli autocompletion
+# eval "$(falcon completion zsh)"
 
 # my Splunk/Aloha username
 export USERNAME="conor.rafferty"
+
+# Huron login URL
+export HURON_LOGIN_URL="https://bdmpresto-access-server.sfproxy.uip.aws-esvc1-useast2.aws.sfdc.cl/"
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -58,13 +65,10 @@ export CPATH="$(xcrun --show-sdk-path)/usr/include"
 # add Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export SPINNAKER_HOME="/Users/conor.rafferty/dev/salesforce/other/sfcd/spinnaker"
+export SPINNAKER_HOME="$HOME/dev/salesforce/other/sfcd/spinnaker"
 
 # update PATH to include personal bin if it exists
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
-
-# add spark to PATH
-export PATH=$PATH:/usr/local/spark/bin
 
 # needed to make `fuck` command work
 eval $(thefuck --alias)
@@ -103,23 +107,8 @@ eval "$(direnv hook zsh)"
 source ~/.zsh/aliases.zsh
 source ~/.dotfiles/zsh/functions.zsh ~/.zsh/functions.zsh
 source ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
-# Auto-export Nexus credentials from Maven settings
-export_nexus_credentials() {
-  local maven_settings="$HOME/.m2/settings.xml"
-  if [[ -f "$maven_settings" ]]; then
-    # Extract username and password from the first server entry (nexus)
-    local username=$(xmllint --xpath "(//*[local-name()='settings']/*[local-name()='servers']/*[local-name()='server']/*[local-name()='username']/text())[1]" $maven_settings 2>/dev/null)
-    local password=$(xmllint --xpath "(//*[local-name()='settings']/*[local-name()='servers']/*[local-name()='server']/*[local-name()='password']/text())[1]" "$maven_settings" 2>/dev/null)
-    
-    if [[ -n "$username" && -n "$password" ]]; then
-      export NEXUS_USERNAME="$username"
-      export NEXUS_PASSWORD="$password"
-    fi
-  fi
-}
-
-# Call the function to export credentials
-export_nexus_credentials
+source ~/.dotfiles/zsh/secrets.zsh
+source ~/.dotfiles/zsh/.zshenv
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
@@ -154,3 +143,34 @@ zinit light lukechilds/zsh-nvm
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 ### End of Zinit plugins
+eval "$(pyenv init -)"
+
+unset CONDA_SHLVL
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# asdf for tool version management
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# Added by dx-cli for Claude Code (native binary installation)
+export PATH="$HOME/.local/bin:$PATH"
+
+# Added by dx-cli for Claude Code CA certificates
+export NODE_EXTRA_CA_CERTS="$HOME/.claude/certs/salesforce-ca-bundle.pem"
+
+# fix for Cursor cd issues
+# see https://forum.cursor.com/t/numerous-error-warning-messages-in-shell-output/134490/4
+export HEXDUMP_PATH=/usr/bin/hexdump
+

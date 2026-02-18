@@ -1,0 +1,14 @@
+# Machine-specific bootstrap config
+# Copy this to ~/.bootstrap_rc and fill in values for your machine
+# Not checked into version control
+
+# Tab completion for zsh
+if [[ ${SHELL:-} == *zsh* ]]; then
+    fpath=($fpath ~/.zsh/completions)
+    autoload -Uz compinit && compinit -C
+fi
+
+# Python path (update to match your installation)
+export PYTHON=/opt/miniconda3/bin/python
+
+export PATH="/usr/bin:/usr/local/bin:$PATH"

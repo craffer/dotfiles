@@ -1,5 +1,5 @@
 [user]
-	name = Conor Rafferty
+	name = conor-rafferty
 	email = conor.rafferty@salesforce.com
 	signingkey = AC9024ABBF280C8A
 
@@ -34,7 +34,7 @@
 
 [alias]
     a = add
-    b = branch
+    b = branch --sort=committerdate
     c = commit
     d = diff
     l = log --graph --decorate --stat --oneline  # shorter log, but with relevant info
@@ -53,6 +53,7 @@
     soft = reset --soft HEAD~1
     unstage = restore --staged
     mpr = merge --no-ff
+	pushf = push --force-with-lease
 
 [pager]
 	branch = false
@@ -70,3 +71,8 @@
 	rebase = true
 [init]
 	defaultBranch = master
+[push]
+	autoSetupRemote = true
+[credential "https://git.soma.salesforce.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
