@@ -87,17 +87,21 @@ huron()
     #   prod-mtrc, staging-mtrc, dev-mtrc                (password auth)
     #
     # --schema catalog.schema  (default: huron_iceberg.metrics)
+    # --llm                    output as CSV for LLM-friendly consumption
 
     local cluster="prod-gateway"
     local catalog_schema="huron_iceberg.metrics"
+    local output_format=""
 
     while [[ $# -gt 0 ]]; do
         case "$1" in
             --schema)
                 catalog_schema="$2"; shift 2 ;;
+            --llm)
+                output_format="CSV"; shift ;;
             -*)
                 echo "Unknown flag: $1"
-                echo "Usage: huron [prod-gateway|staging-gateway|dev-gateway|prod-mtrc|staging-mtrc|dev-mtrc] [--schema catalog.schema]"
+                echo "Usage: huron [CLUSTER] [--schema catalog.schema] [--llm]"
                 return 1 ;;
             *)
                 cluster="$1"; shift ;;
@@ -147,8 +151,14 @@ huron()
         export TRINO_PASSWORD="$password"
     fi
 
+    local format_args=()
+    if [[ -n "$output_format" ]]; then
+        format_args=(--output-format "$output_format")
+    fi
+
     trino --server "https://$server:$port" \
         "${auth_args[@]}" \
+        "${format_args[@]}" \
         --debug \
         --catalog "$catalog" \
         --schema "$schema" \
