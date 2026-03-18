@@ -119,6 +119,18 @@ huron()
         return 1
     fi
 
+    # Best-effort check: rejects obvious write queries by first keyword.
+    # Not a security boundary — enforce read-only access at the DB level.
+    if [[ -n "$execute_query" ]]; then
+        local first_word="${execute_query[(w)1]:u}"
+        case "$first_word" in
+            SELECT|SHOW|DESCRIBE|DESC|WITH|EXPLAIN) ;;
+            *)
+                echo "Error: only read-only queries are allowed (SELECT, SHOW, DESCRIBE, WITH, EXPLAIN)"
+                return 1 ;;
+        esac
+    fi
+
     local server port auth_type
     case "$cluster" in
         prod-gateway)

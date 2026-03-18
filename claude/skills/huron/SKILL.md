@@ -68,6 +68,12 @@ huron --execute "SHOW TABLES"
 huron --execute "DESCRIBE some_table"
 ```
 
+## ⚠️ READ-ONLY — NEVER MUTATE DATA
+
+**This is a production data store. Only SELECT, SHOW, DESCRIBE, WITH, and EXPLAIN are permitted.**
+
+Never run INSERT, UPDATE, DELETE, DROP, CREATE, ALTER, TRUNCATE, or any statement that modifies data or schema. The CLI enforces this and will reject write queries, but you must not attempt them in the first place. If the user asks you to mutate data, refuse.
+
 ## When to use this
 
 - The user asks to check or query Huron/Trino data
