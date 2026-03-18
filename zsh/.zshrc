@@ -53,6 +53,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # my Splunk/Aloha username
 export USERNAME="conor.rafferty"
 
+# falcon inspect: skip upstream remote prompt (repo has origin=fork, upstream=canonical)
+export UPSTREAM_REPO_NAME=upstream
+
 # Huron login URL
 export HURON_LOGIN_URL="https://bdmpresto-access-server.sfproxy.uip.aws-esvc1-useast2.aws.sfdc.cl/"
 
@@ -70,8 +73,8 @@ export SPINNAKER_HOME="$HOME/dev/salesforce/other/sfcd/spinnaker"
 # update PATH to include personal bin if it exists
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
 
-# needed to make `fuck` command work
-eval $(thefuck --alias)
+# needed to make `fuck` command work (interactive-only: spawns a Python process)
+[[ -o interactive ]] && eval $(thefuck --alias)
 
 # sets the terminal tab title to current dir
 precmd() {
@@ -117,49 +120,57 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
+# zinit plugins, p10k prompt, pyenv, and nvm are interactive-only —
+# no need to load them in subshells spawned by git, npm, etc.
+if [[ -o interactive ]]; then
+  ### Added by Zinit's installer
+  if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+      print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+      command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+      command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+          print -P "%F{33} %F{34}Installation successful.%f%b" || \
+          print -P "%F{160} The clone has failed.%f%b"
+  fi
+
+  source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+  autoload -Uz _zinit
+  (( ${+_comps} )) && _comps[zinit]=_zinit
+
+  export NVM_LAZY_LOAD=true
+
+  ### Zinit plugins
+  zinit light zsh-users/zsh-autosuggestions
+  zinit light zdharma-continuum/fast-syntax-highlighting
+  zinit light lukechilds/zsh-nvm
+
+  # disable syntax highlighting for man pages to prevent hanging
+  # see https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/179
+  # FAST_HIGHLIGHT[chroma-man]=
+
+  zinit ice depth=1; zinit light romkatv/powerlevel10k
+  ### End of Zinit plugins
+
+  eval "$(pyenv init -)"
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-export NVM_LAZY_LOAD=true
-
-### Zinit plugins
-zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light lukechilds/zsh-nvm
-
-# disable syntax highlighting for man pages to prevent hanging
-# see https://github.com/zdharma-continuum/fast-syntax-highlighting/issues/179
-# FAST_HIGHLIGHT[chroma-man]=
-
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-### End of Zinit plugins
-eval "$(pyenv init -)"
-
-unset CONDA_SHLVL
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
+# conda shell integration is interactive-only (slow and not needed in subshells)
+if [[ -o interactive ]]; then
+  unset CONDA_SHLVL
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/opt/miniconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/opt/miniconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # <<< conda initialize <<<
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # asdf for tool version management
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
@@ -174,3 +185,15 @@ export NODE_EXTRA_CA_CERTS="$HOME/.claude/certs/salesforce-ca-bundle.pem"
 # see https://forum.cursor.com/t/numerous-error-warning-messages-in-shell-output/134490/4
 export HEXDUMP_PATH=/usr/bin/hexdump
 
+
+# gvm is interactive-only: its helper functions call _encode/_decode which are
+# not available in non-interactive subshells, causing spurious warnings
+[[ -o interactive && -s "/Users/conor.rafferty/.gvm/scripts/gvm" ]] && source "/Users/conor.rafferty/.gvm/scripts/gvm"
+# BEGIN ANSIBLE MANAGED BLOCK - GO ENVIRONMENT
+export GOPRIVATE=git.soma.salesforce.com
+export GOPROXY=https://nexus-proxy.repo.local.sfdc.net/nexus/repository/go-proxy
+# END ANSIBLE MANAGED BLOCK - GO ENVIRONMENT
+
+export PATH="$PATH:$HOME/go/bin"
+
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
