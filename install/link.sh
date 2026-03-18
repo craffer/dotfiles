@@ -48,6 +48,10 @@ backup_and_link ~/.dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
 backup_and_link ~/.dotfiles/zsh/functions.zsh ~/.zsh/functions.zsh
 backup_and_link ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
 
+# claude
+mkdir -p ~/.claude
+backup_and_link ~/.dotfiles/claude/skills ~/.claude/skills
+
 # other
 backup_and_link ~/.dotfiles/other/.eslintrc.js ~/.eslintrc.js 2>/dev/null || true
 backup_and_link ~/.dotfiles/other/.always_forget.txt ~/.always_forget.txt 2>/dev/null || true
