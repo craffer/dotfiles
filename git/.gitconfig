@@ -76,3 +76,5 @@
 [credential "https://git.soma.salesforce.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[url "git@git.soma.salesforce.com:"]
+	insteadOf = https://git.soma.salesforce.com/
