@@ -13,3 +13,7 @@ vim/autoload/
 
 secrets.zsh
 .zshenv
+
+# Claude Code and CodeGenie local config
+.claude/
+.codegenie/

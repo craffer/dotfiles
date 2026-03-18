@@ -51,6 +51,7 @@ backup_and_link ~/.dotfiles/zsh/shortcuts.zsh ~/.shortcuts.zsh
 # claude
 mkdir -p ~/.claude
 backup_and_link ~/.dotfiles/claude/skills ~/.claude/skills
+backup_and_link ~/.dotfiles/claude/commands ~/.claude/commands
 
 # other
 backup_and_link ~/.dotfiles/other/.eslintrc.js ~/.eslintrc.js 2>/dev/null || true
