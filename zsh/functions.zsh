@@ -80,33 +80,82 @@ vault-login()
 
 huron()
 {
-    # for metrics, use `huron metrics`
-    # for tokenized core app logs, use `huron tokenized`
-    # for untokenized core app logs, just use `huron`
-    if [ "$#" -gt 0 ]; then
-        if [ "$1" == "metrics" ]; then
-            catalog="huron_iceberg"
-            schema="metrics"
-        elif [ "$1" == "tokenized" ]; then
-            catalog="coreapplogs"
-            schema="coreapplogs_tokenized"
-        fi
-    else
-        catalog="coreapplogs"
-        schema="coreapplogs_untokenized"
-    fi
-    
-    fi="${FALCON_INSTANCE:-aws-esvc1-useast2}"
-    fd="${FUNCTIONAL_DOMAIN:-uip}"
-    echo $fi $fd
+    # Usage: huron [CLUSTER] [--schema catalog.schema]
+    #
+    # Cluster (positional, default: prod-gateway):
+    #   prod-gateway, staging-gateway, dev-gateway       (cert auth)
+    #   prod-mtrc, staging-mtrc, dev-mtrc                (password auth)
+    #
+    # --schema catalog.schema  (default: huron_iceberg.metrics)
 
-    trino --server https://trino-gateway.sfproxy.$fd.$fi.aws.sfdc.cl:9443 \
-    --keystore-path $CERT_FILE_WITH_KEY \
-    --truststore-path $CA_CERT_FILE  \
-    --debug \
-    --catalog "huron_iceberg" \
-    --schema "metrics" \
-    --user $USERNAME
+    local cluster="prod-gateway"
+    local catalog_schema="huron_iceberg.metrics"
+
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --schema)
+                catalog_schema="$2"; shift 2 ;;
+            -*)
+                echo "Unknown flag: $1"
+                echo "Usage: huron [prod-gateway|staging-gateway|dev-gateway|prod-mtrc|staging-mtrc|dev-mtrc] [--schema catalog.schema]"
+                return 1 ;;
+            *)
+                cluster="$1"; shift ;;
+        esac
+    done
+
+    local catalog="${catalog_schema%%.*}"
+    local schema="${catalog_schema#*.}"
+    if [[ "$catalog" == "$schema" ]]; then
+        echo "Error: --schema must be in catalog.schema format (e.g. huron_iceberg.metrics)"
+        return 1
+    fi
+
+    local server port auth_type
+    case "$cluster" in
+        prod-gateway)
+            server="trino-gateway.sfproxy.uip.aws-esvc1-useast2.aws.sfdc.cl"; port=9443; auth_type=cert ;;
+        staging-gateway)
+            server="trino-gateway.sfproxy.uip-s.aws-esvc1-useast2.aws.sfdc.cl"; port=9443; auth_type=cert ;;
+        dev-gateway)
+            server="trino-gateway.sfproxy.uip001.dev1-uswest2.aws.sfdc.cl"; port=9443; auth_type=cert ;;
+        prod-mtrc)
+            server="bdmpresto-huron-mtrc.sfproxy.uip.aws-esvc1-useast2.aws.sfdc.cl"; port=9443; auth_type=password ;;
+        staging-mtrc)
+            server="bdmpresto-huron-mtrc.sfproxy.uip-s.aws-esvc1-useast2.aws.sfdc.cl"; port=9443; auth_type=password ;;
+        dev-mtrc)
+            server="bdmpresto-huron-mtrc.sfproxy.uip001.dev1-uswest2.aws.sfdc.cl"; port=443; auth_type=password ;;
+        *)
+            echo "Unknown cluster: $cluster"
+            echo "Valid clusters: prod-gateway, staging-gateway, dev-gateway, prod-mtrc, staging-mtrc, dev-mtrc"
+            return 1 ;;
+    esac
+
+    echo "Connecting to $cluster ($server:$port) -> $catalog.$schema"
+
+    local auth_args=()
+    if [[ "$auth_type" == "cert" ]]; then
+        auth_args=(--keystore-path "$CERT_FILE_WITH_KEY" --truststore-path "$CA_CERT_FILE")
+    else
+        local password="${HURON_MTRC_PASSWORD:-}"
+        if [[ -z "$password" ]]; then
+            echo -n "Password: "
+            read -rs password
+            echo
+        fi
+        auth_args=(--password --truststore-path "$CA_CERT_FILE")
+        export TRINO_PASSWORD="$password"
+    fi
+
+    trino --server "https://$server:$port" \
+        "${auth_args[@]}" \
+        --debug \
+        --catalog "$catalog" \
+        --schema "$schema" \
+        --user "$USERNAME"
+
+    # clean up password from env if we set it
+    unset TRINO_PASSWORD
 }
 
 docker-versions()
@@ -248,12 +297,12 @@ kprod_monex() {
 }
 
 kprod_trino() {
-    _k8s_read_only_setup "bdmpresto_huron_etl_01_aws_esvc1_useast2_uip" "presto"
+    _k8s_read_only_setup "bdmpresto_huron_mtrc_aws_esvc1_useast2_uip" "presto"
 }
 
 kdev1_trino() {
     _k8s_arbitrary_context_setup \
-        "bdmpresto_huron_etl_dev1_uswest2_uip001" \
+        "bdmpresto_huron_mtrc_dev1_uswest2_uip001" \
         "$HOME/dev/salesforce/other/personal/k8s-contexts/dev1-trino" \
         "PCSKDeveloperRole" \
         "Huron developer, need access to the Trino clusters to test out changes"

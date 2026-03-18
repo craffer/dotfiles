@@ -33,7 +33,7 @@ alias mergepdf="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 
 
 # salesforce specific
-alias trino="/Users/conor.rafferty/dev/salesforce/other/personal/tools/trino-cli-436-executable.jar"
+alias trino="/Users/conor.rafferty/dev/salesforce/other/personal/tools/trino-cli-455-executable.jar"
 alias fdev1='ssh -t bastion.syssec.monitoring.fdev1-uswest2.aws.sfdc.cl "tmux -CC new -A -s tmux-main"'
 alias dev1='ssh -t bastion.syssec.monitoring.dev1-uswest2.aws.sfdc.cl "tmux -CC new -A -s tmux-main"'
 alias orc-tools="java -jar ~/dev/salesforce/other/personal/tools/orc-tools/orc-tools-2.0.1-uber.jar"
