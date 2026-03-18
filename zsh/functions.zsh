@@ -87,21 +87,25 @@ huron()
     #   prod-mtrc, staging-mtrc, dev-mtrc                (password auth)
     #
     # --schema catalog.schema  (default: huron_iceberg.metrics)
+    # --execute "SQL"          run a query non-interactively (implies --llm)
     # --llm                    output as CSV for LLM-friendly consumption
 
     local cluster="prod-gateway"
     local catalog_schema="huron_iceberg.metrics"
     local output_format=""
+    local execute_query=""
 
     while [[ $# -gt 0 ]]; do
         case "$1" in
             --schema)
                 catalog_schema="$2"; shift 2 ;;
+            --execute)
+                execute_query="$2"; output_format="CSV"; shift 2 ;;
             --llm)
                 output_format="CSV"; shift ;;
             -*)
                 echo "Unknown flag: $1"
-                echo "Usage: huron [CLUSTER] [--schema catalog.schema] [--llm]"
+                echo "Usage: huron [CLUSTER] [--schema catalog.schema] [--execute \"SQL\"] [--llm]"
                 return 1 ;;
             *)
                 cluster="$1"; shift ;;
@@ -151,15 +155,14 @@ huron()
         export TRINO_PASSWORD="$password"
     fi
 
-    local format_args=()
-    if [[ -n "$output_format" ]]; then
-        format_args=(--output-format "$output_format")
-    fi
+    local extra_args=()
+    [[ -n "$output_format" ]] && extra_args+=(--output-format "$output_format")
+    [[ -n "$execute_query" ]] && extra_args+=(--execute "$execute_query")
 
     trino --server "https://$server:$port" \
         "${auth_args[@]}" \
-        "${format_args[@]}" \
-        --debug \
+        "${extra_args[@]}" \
+        --no-progress \
         --catalog "$catalog" \
         --schema "$schema" \
         --user "$USERNAME"
