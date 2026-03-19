@@ -276,6 +276,8 @@ _k8s_read_only_setup() {
     cd ~/dev/salesforce/other/personal/tools/periscope
     falcon context apply "$aws_context"
     falcon kube config
+    kubectl config unset users.periscope-user.client-key 2>/dev/null || true
+    kubectl config unset users.periscope-user.client-certificate 2>/dev/null || true
     kubectl config set-context --current --namespace "$namespace"
 }
 
