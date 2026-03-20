@@ -10,10 +10,12 @@ Create a pull request description file by analyzing all changes on the current b
 ## Steps
 
 1. Determine the base branch (usually `master` or `main`).
-2. Run `git log <base>..HEAD` and `git diff <base>...HEAD` to understand ALL changes on this branch.
-3. Generate a PR description that fills in the template below. Replace the HTML comments with real content — do not leave the HTML comments in the output.
-4. Write the file to `pr-descriptions/` in the repo root. Name it after the current branch (e.g. `pr-descriptions/my-feature.md`). Create the directory if it doesn't exist.
-5. Show the user the generated content and the file path.
+2. Determine the current branch name and the expected output file path: `pr-descriptions/<branch-name>.md` in the repo root.
+3. Check if that file already exists. If it does, read its current contents — you will update it rather than generate from scratch.
+4. Run `git log <base>..HEAD` and `git diff <base>...HEAD` to understand ALL changes on this branch.
+5. Generate (or update) a PR description using the template below. Replace the HTML comments with real content — do not leave the HTML comments in the output. If an existing description was found, preserve and incorporate any content the user has already written, updating or expanding sections as appropriate based on the current diff.
+6. Write the file to `pr-descriptions/` in the repo root. Create the directory if it doesn't exist.
+7. Show the user the generated content and the file path.
 
 ## Template
 
