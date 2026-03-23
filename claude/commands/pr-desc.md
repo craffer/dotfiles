@@ -92,4 +92,51 @@ Write like you're explaining this to a teammate at a whiteboard. The author of t
 - If the user provides additional context via arguments, incorporate it.
 - If you don't have enough information for a thorough Testing section (e.g., you haven't seen test runs), ask the user rather than making things up. It's better to write "TODO: add testing details" than to fabricate evidence.
 
+## Example
+
+Here is a real example of a good PR description in this style. Use it as a reference for tone, structure, and level of detail.
+
+```markdown
+## Context
+
+Our Strata builds for this repo can take a very long time. All of our [most recent `master` branch builds](https://example-ci.com/build/master-branch) took between 45 mins to up to 1.5 hours!
+
+This reduces our agility when testing out changes in dev environments. It also increases our TTR in case of an incident where we need to fix-forward in this Docker image.
+
+The bulk of our time in our Strata builds is spent building our Docker image. Every Strata build includes a link to a dashboard like [this one](https://example.com/build-dashboard), where we can see which steps are taking the most time.
+
+## Change
+
+So, why does our Docker build take so long? We can drill into this, too. On [the most recent `master` branch build](https://example-ci.com/build/most-recent-master-build), our `chown` command took an astounding 1,459 seconds (>24 minutes!).
+
+SCREENSHOT OF TIME TAKEN
+
+If we get rid of the `chown`, we speed up our builds. So instead of running `chown -R` at the end, we use `COPY --chown` in all of our `COPY` steps, and we do our `USER sfdc` and `WORKDIR /home/sfdc` commands much earlier, so that new files are created owned by `sfdc` by default.
+
+I also made some other changes (combined layers, renamed our `Dockerfile` to match convention), but I expect the `chown` thing to be the big improvement.
+
+## Testing
+
+### Timing
+
+On my local, builds are happening much quicker. All the filesystem-heavy build steps now complete in under 1 minute:
+
+| Branch   | Overall Build Time | Docker build time |
+|----------|--------------------|-------------------|
+| `master` | 1h 8m 36s          | 29.56 m           |
+| PR       | 24m 1s             | 3.80 m            |
+
+7-8x improvement in the Docker build time. I would call that a success!
+
+### Functionality
+
+We also need to make sure we get equivalent functionality. I deployed the image from this PR into `dev1`. The Argo Rollout succeeded and our FIT tests passed. At a glance, everything LGTM.
+
+<details><summary>File permission comparison between images</summary>
+
+(verbose docker run output comparing permissions here)
+
+</details>
+```
+
 $ARGUMENTS
