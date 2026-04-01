@@ -20,7 +20,8 @@ alias preview="quick-look"
 alias chrome="open -a 'Google Chrome'"
 
 # directory shortcuts
-alias sf="cd ~/dev/salesforce/"
+# Do not shadow Salesforce CLI (`sf`).
+alias sfd="cd ~/dev/salesforce/"
 alias dotfiles="cd ~/.dotfiles"
 
 # other
