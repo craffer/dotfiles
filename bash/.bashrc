@@ -33,3 +33,6 @@ if [ -f /Users/conor.rafferty/.ansible/env.sh ]; then
     # To disable ansible, comment out, but do not delete the following:
     activate_ansible
 fi
+# devbar-managed-start
+export NODE_EXTRA_CA_CERTS="$HOME/.devbar/certs/corporate-ca-bundle.pem"
+# devbar-managed-end

@@ -172,14 +172,10 @@ if [[ -o interactive ]]; then
   # <<< conda initialize <<<
 fi
 
-# asdf for tool version management
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# rbenv for Ruby version management
+eval "$(rbenv init - zsh)"
 
-# Added by dx-cli for Claude Code (native binary installation)
 export PATH="$HOME/.local/bin:$PATH"
-
-# Added by dx-cli for Claude Code CA certificates
-export NODE_EXTRA_CA_CERTS="$HOME/.claude/certs/salesforce-ca-bundle.pem"
 
 # fix for Cursor cd issues
 # see https://forum.cursor.com/t/numerous-error-warning-messages-in-shell-output/134490/4
@@ -197,3 +193,6 @@ export GOPROXY=https://nexus-proxy.repo.local.sfdc.net/nexus/repository/go-proxy
 export PATH="$PATH:$HOME/go/bin"
 
 export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+# devbar-managed-start
+export NODE_EXTRA_CA_CERTS="$HOME/.devbar/certs/corporate-ca-bundle.pem"
+# devbar-managed-end

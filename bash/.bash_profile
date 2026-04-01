@@ -17,3 +17,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# devbar-managed-start
+export NODE_EXTRA_CA_CERTS="$HOME/.devbar/certs/corporate-ca-bundle.pem"
+# devbar-managed-end
