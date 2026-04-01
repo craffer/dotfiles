@@ -9,7 +9,8 @@ When creating a commit, follow these rules:
 
 1. **Determine the work item**: The format is `@W-XXXXXXXX` (e.g. `@W-21653944`). Every commit message MUST start with the work item prefix. To find it:
    - First, check existing commits on the current feature branch — if they already contain a `@W-` prefix, reuse that same work item.
-   - If no work item is found in existing commits, and the user didn't provide one, ask the user.
+   - If no work item is found in existing commits, and the user didn't provide one, use the **gus-wi skill** to fetch the user's current sprint work items, then intelligently suggest the most relevant one based on context clues: branch name, staged file paths, and the drafted commit message. Present your top suggestion (or 2–3 if confidence is low) and ask the user to confirm before proceeding.
+   - If no sprint items seem relevant to the changes, offer to **create a new WI** using the gus-wi skill — briefly describe what it would cover based on the changes and ask the user if they'd like to proceed. Only fall back to asking the user for a WI number directly if they decline creation and gus-wi is unavailable.
 
 2. **Commit message format**: `@W-XXXXXXXX: <message>`
    - The first letter of `<message>` should be **lowercase**, unless it is a proper noun (e.g. a product name, class name, etc.)

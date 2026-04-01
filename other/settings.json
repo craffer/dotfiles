@@ -1,362 +1,44 @@
 {
-  "editor.fontFamily": "'Hasklug Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.rulers": [
-    100
-  ],
-  "[css]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "michelemelluso.code-beautifier"
-  },
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
-    "diffEditor.ignoreTrimWhitespace": false,
-  },
-  "[javascript]": {
-    "editor.tabSize": 2,
-  },
-  "[jinja-json]": {
-    "editor.tabSize": 2,
-  },
-  "[terraform]": {
-    "editor.tabSize": 2,
-  },
-  "[json]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "vscode.json-language-features",
-  },
-  "[jsonc]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "vscode.json-language-features",
-  },
-  "python.pythonPath": "/usr/local/bin/python3",
-  "code-runner.showExecutionMessage": false,
-  "code-runner.saveAllFilesBeforeRun": true,
-  "code-runner.clearPreviousOutput": true,
-  "workbench.startupEditor": "none",
-  "window.newWindowDimensions": "inherit",
-  "C_Cpp.default.cppStandard": "c++11",
-  "C_Cpp.default.intelliSenseMode": "gcc-x64",
-  "git.showPushSuccessNotification": true,
-  "git.enableSmartCommit": true,
-  "editor.wordWrap": "on",
-  "code-runner.executorMap": {
-    "javascript": "node",
-    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
-    "php": "php",
-    "python": "python3 -u",
-    "perl": "perl",
-    "perl6": "perl6",
-    "ruby": "ruby",
-    "go": "go run",
-    "lua": "lua",
-    "groovy": "groovy",
-    "powershell": "powershell -ExecutionPolicy ByPass -File",
-    "bat": "cmd /c",
-    "shellscript": "bash",
-    "fsharp": "fsi",
-    "csharp": "scriptcs",
-    "vbscript": "cscript //Nologo",
-    "typescript": "ts-node",
-    "coffeescript": "coffee",
-    "scala": "scala",
-    "swift": "swift",
-    "julia": "julia",
-    "crystal": "crystal",
-    "ocaml": "ocaml",
-    "r": "Rscript",
-    "applescript": "osascript",
-    "clojure": "lein exec",
-    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
-    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
-    "racket": "racket",
-    "ahk": "autohotkey",
-    "autoit": "autoit3",
-    "dart": "dart",
-    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
-    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
-    "haskell": "runhaskell",
-    "nim": "nim compile --verbosity:0 --hints:off --run",
-    "lisp": "sbcl --script"
-  },
-  "code-runner.customCommand": "echo \"custom command\"",
-  "debug.allowBreakpointsEverywhere": true,
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "pdflatex",
-      "tools": [
-        "pdflatex"
-      ]
-    },
-    {
-      "name": "latexmk",
-      "tools": [
-        "latexmk"
-      ]
-    },
-    {
-      "name": "pdflatex -> bibtex -> pdflatex*2",
-      "tools": [
-        "pdflatex",
-        "bibtex",
-        "pdflatex",
-        "pdflatex"
-      ]
-    },
-    {
-      "name": "xelatex",
-      "tools": [
-        "xelatex"
-      ]
-    }
-  ],
-  "latex-workshop.latex.tools": [
-    {
-      "name": "pdflatex",
-      "command": "pdflatex",
-      "args": [
-        "%DOCFILE%"
-      ]
-    },
-    {
-      "name": "latexmk",
-      "command": "latexmk",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-pdf",
-        "-outdir=%OUTDIR%",
-        "%DOC%"
-      ]
-    },
-    {
-      "name": "pdflatex",
-      "command": "pdflatex",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ]
-    },
-    {
-      "name": "bibtex",
-      "command": "bibtex",
-      "args": [
-        "%DOCFILE%"
-      ]
-    },
-    {
-      "name": "xelatex",
-      "command": "xelatex",
-      "args": [
-        "%DOCFILE%"
-      ]
-    }
-  ],
-  "liveshare.allowGuestDebugControl": true,
-  "liveshare.populateGitCoAuthors": "always",
-  "git.autofetch": true,
-  "eslint.run": "onSave",
-  "workbench.colorCustomizations": {
-    "terminal.ansiBlack": "#272c33",
-    "terminal.ansiBrightBlack": "#6f7683",
-    "terminal.ansiRed": "#e78287",
-    "terminal.ansiBrightRed": "#e78287",
-    "terminal.ansiGreen": "#a7cb8b",
-    "terminal.ansiBrightGreen": "#a7cb8b",
-    "terminal.ansiYellow": "#daaa78",
-    "terminal.ansiBrightYellow": "#daaa78",
-    "terminal.ansiBlue": "#71bdf2",
-    "terminal.ansiBrightBlue": "#71bdf2",
-    "terminal.ansiMagenta": "#d190e3",
-    "terminal.ansiBrightMagenta": "#d190e3",
-    "terminal.ansiCyan": "#65c1cd",
-    "terminal.ansiBrightCyan": "#65c1cd",
-    "terminal.ansiWhite": "#b9bfca",
-    "terminal.ansiBrightWhite": "#fefefe"
-  },
-  "editor.detectIndentation": false,
-  "[javascriptreact]": {
-    "editor.tabSize": 2,
-    "editor.rulers": [
-      100
-    ],
-    "editor.formatOnSave": true
-  },
-  "latex-workshop.latex.autoClean.run": "onFailed",
-  "latex-workshop.latex.autoBuild.run": "onFileChange",
-  "explorer.confirmDelete": false,
-  "terminal.external.osxExec": "iTerm.app",
-  "editor.fontLigatures": true,
-  "liveshare.featureSet": "insiders",
-  "telemetry.enableTelemetry": false,
-  "code-runner.enableAppInsights": false,
-  "latex-workshop.latex.recipe.default": "lastUsed",
-  "git.ignoreLegacyWarning": true,
-  "explorer.confirmDragAndDrop": false,
-  "markdownlint.run": "onSave",
-  "remote.SSH.showLoginTerminal": true,
-  "[cpp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100}",
-  "git.untrackedChanges": "mixed",
-  "oneDarkPro.bold": true,
-  "files.associations": {
-    "vimrc": "viml",
-    "direnvrc": "shellscript",
-    "Caskfile": "shellscript",
-    "Brewfile": "shellscript",
-    ".envrc": "shellscript",
-    "*.txt": "plaintext",
-    "*.stack": "log",
-    "_helpers.tpl": "helm",
-    "configure-cluster.tpl": "shellscript",
-    "*.tpl": "properties",
-    "*compose-certs.tpl": "shellscript",
-    "tools.tpl": "shellscript",
-    "*.j2": "jinja-json",
-    "*.service": "systemd-unit-file",
-    "*.slackworkflow": "json"
-  },
-  "git.confirmSync": false,
-  "C_Cpp.intelliSenseCacheSize": 512,
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.defaultDateStyle": "absolute",
-  "workbench.editor.limit.enabled": true,
-  "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/Users/conor.rafferty/.pyenv/shims/darker", 
-  "python.formatting.blackArgs": [],
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "python.languageServer": "Pylance",
-  "files.exclude": {
-    "**/.classpath": false,
-    "**/.project": false,
-    "**/.settings": false,
-    "**/.factorypath": false
-  },
-  "java.semanticHighlighting.enabled": true,
-  "editor.formatOnSaveMode": "modifications",
-  "python.showStartPage": false,
-  "java.configuration.updateBuildConfiguration": "automatic",
-  "gitlens.codeLens.enabled": false,
-  "java.project.importOnFirstTimeStartup": "automatic",
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-17",
-      "path": "/Library/Java/JavaVirtualMachines/openjdk_17.0.10_17.48.16_aarch64/zulu-17.jdk/Contents/Home",
-      "default": false
-    },
-    {
-      "name": "JavaSE-11",
-      "path": "/Library/Java/JavaVirtualMachines/openjdk_11.0.21.0.101_11.69.14_aarch64/zulu-11.jdk/Contents/Home",
-      "default": false
-    },
-    {
-      "name": "JavaSE-1.8",
-      "path": "/Library/Java/JavaVirtualMachines/openjdk1.8.0.401_8.75.0.16_aarch64/zulu-8.jdk/Contents/Home",
-      "default": true
-    }
-  ],
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  "workbench.editor.decorations.badges": false,
-  "gitlens.remotes": [
-    {
-      "domain": "git.soma.salesforce.com",
-      "type": "Custom",
-      "name": "Salesforce GitHub",
-      "protocol": "https",
-      "urls": {
-        "repository": "https://git.soma.salesforce.com/${repo}",
-        "branches": "https://git.soma.salesforce.com/${repo}/branches",
-        "branch": "https://git.soma.salesforce.com/${repo}/commits/${branch}",
-        "commit": "https://git.soma.salesforce.com/${repo}/commit/${id}",
-        "file": "https://git.soma.salesforce.com/${repo}?path=${file}${line}",
-        "fileInBranch": "https://git.soma.salesforce.com/${repo}/blob/${branch}/${file}${line}",
-        "fileInCommit": "https://git.soma.salesforce.com/${repo}/blob/${id}/${file}${line}",
-        "fileLine": "#L${line}",
-        "fileRange": "#L${start}-L${end}"
-      }
-    }
-  ],
-  "redhat.telemetry.enabled": false,
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
-  },
-  "puppet.titleBar.pdkNewModule.enable": false,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "gitlens.statusBar.dateFormat": "MMMM Do, YYYY, h:mm a",
-  "search.followSymlinks": false,
-  "gitlens.plusFeatures.enabled": false,
-  "vs-kubernetes": {
-    "vscode-kubernetes.minikube-path.mac": "/Users/conor.rafferty/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-  },
-  "perforce.editOnFileModified": true,
-  "perforce.swarmHost": "https://swarm.soma.salesforce.com",
-  "github-enterprise.uri": "https://git.soma.salesforce.com/",
-  "terminal.integrated.sendKeybindingsToShell": true,
-  "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontSize": 13,
-  "terminal.integrated.fontFamily": "'Hasklug Nerd Font Mono', 'MesloLGS NF'",
-  "workbench.colorTheme": "One Dark Pro",
-  "security.workspace.trust.untrustedFiles": "open",
-  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/openjdk_17.0.10_17.48.16_aarch64/zulu-17.jdk/Contents/Home",
-  "window.zoomLevel": 1,
-  "git.openRepositoryInParentFolders": "always",
-  "java.format.settings.url": "https://raw.githubusercontent.com/airlift/codestyle/master/IntelliJIdea2019/Airlift.xml",
-  "java.configuration.maven.globalSettings": "~/.m2/settings.xml",
-  "sql-formatter.uppercase": true,
-  "codeGenie.advanced.currentVersion": "7.0.0",
-  "codeGenie.advanced.chat.enabled": true,
-  "githubPullRequests.pullBranch": "never",
-  "codeGenie.settings.autoTrigger.enabled": false,
-  "terminal.integrated.allowedLinkSchemes": [
-    "file",
-    "http",
-    "https",
-    "mailto",
-    "vscode",
-    "vscode-insiders",
-    "docker-desktop"
-  ],
-  "codeGenie.settings.showTips": false,
-  "CodegenieLanguageServer.enableIndex": false,
-  "java.jdt.ls.vmargs": "-XmX8G",
-  "editor.defaultFormatter": "ms-python.black-formatter",
-  "[sql]": {
-    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
-  },
-  "diffEditor.ignoreTrimWhitespace": true,
-  "terminal.integrated.fontLigatures": true,
-  "codeGenie.settings.tracking": "low",
-  "gitlens.views.scm.grouped.views": {
-    "commits": false,
-    "branches": true,
-    "remotes": true,
-    "stashes": false,
-    "tags": true,
-    "worktrees": true,
-    "contributors": true,
-    "repositories": false,
-    "searchAndCompare": false,
-    "launchpad": false
-  },
-  "[yaml]": {
-    "diffEditor.ignoreTrimWhitespace": true
-  },
-  "editor.unicodeHighlight.nonBasicASCII": false,
-  "docker.extension.enableComposeLanguageServer": false
+    "claudeCode.environmentVariables": [
+        {
+            "name": "ANTHROPIC_AUTH_TOKEN",
+            "value": "sk-2fWQUuKKTRjsFyCaH0FYuA"
+        },
+        {
+            "name": "ANTHROPIC_BEDROCK_BASE_URL",
+            "value": "https://eng-ai-model-gateway.sfproxy.devx-preprod.aws-esvc1-useast2.aws.sfdc.cl/bedrock"
+        },
+        {
+            "name": "CLAUDE_CODE_SKIP_BEDROCK_AUTH",
+            "value": "1"
+        },
+        {
+            "name": "CLAUDE_CODE_USE_BEDROCK",
+            "value": "1"
+        },
+        {
+            "name": "DISABLE_AUTOUPDATER",
+            "value": "0"
+        },
+        {
+            "name": "DISABLE_BUG_COMMAND",
+            "value": "1"
+        },
+        {
+            "name": "DISABLE_ERROR_REPORTING",
+            "value": "1"
+        },
+        {
+            "name": "DISABLE_TELEMETRY",
+            "value": "1"
+        },
+        {
+            "name": "FORCE_AUTOUPDATE_PLUGINS",
+            "value": "1"
+        },
+        {
+            "name": "NODE_TLS_REJECT_UNAUTHORIZED",
+            "value": "1"
+        }
+    ]
 }
